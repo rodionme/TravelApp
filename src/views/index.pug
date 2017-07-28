@@ -1,0 +1,10 @@
+extend _template
+
+block pageTitle
+  - var pageTitle = 'Test'
+block prepend body
+  body
+    section#page-index.page-container.index-page
+      p(style="font-family: Roboto") Test
+      //- Pug including example
+      include parts/_loader
