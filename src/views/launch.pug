@@ -1,0 +1,37 @@
+extend _template
+
+block pageTitle
+  - var pageTitle = 'Launch'
+block prepend body
+  body
+    include svg/_icon-template
+    include svg/_icon-search
+    include svg/_icon-tourist
+
+    section#page-launch.page-container.launch-page
+      main.launch-page__intro.launch-intro
+        h3.launch-intro__title Explore history on the road
+        div.launch-intro__slider.slider
+          div.launch-intro__slide.slide
+            h4.slide__title Share the Experience
+            p.slide__text
+              |Next Exit History is a free mobile app that links visitors to nearby
+              |historical sites using your mobile device's GPS
+          div.slider__dots
+
+      footer.launch-page__footer
+        div.launch-links
+          a(href="").launch-links__link.launch-link
+            div.launch-link__icon
+              +icon('icon-search')
+            span.launch-link__caption Find
+
+          a(href="").launch-links__link.launch-link
+            div.launch-link__icon
+              +icon('icon-tourist')
+            span.launch-link__caption Backpacks
+
+          a(href="").launch-links__link.launch-link
+            div.launch-link__icon
+              div.icon-question
+            span.launch-link__caption About
