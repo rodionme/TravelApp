@@ -4,7 +4,22 @@ block pageTitle
   - var pageTitle = 'Test'
 block prepend body
   body
+    include svg/_icon-template
+    include svg/_icon-back
+    include svg/_icon-bell
+    include svg/_icon-faq
+    include svg/_icon-map
+    include svg/_icon-marker
+    include svg/_icon-next
+    include svg/_icon-search
+    include svg/_icon-tourist
+
     section#page-index.page-container.index-page
-      p(style="font-family: Roboto") Test
-      //- Pug including example
-      include parts/_loader
+      +icon('icon-back')
+      +icon('icon-bell')
+      +icon('icon-faq')
+      +icon('icon-map')
+      +icon('icon-marker')
+      +icon('icon-next')
+      +icon('icon-search')
+      +icon('icon-tourist')
