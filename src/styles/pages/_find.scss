@@ -1,0 +1,117 @@
+.find-page {
+  &__topbar {}
+
+  &__content {}
+}
+
+
+
+.topbar {
+  &__left {}
+
+  &__center {}
+
+  &__right {}
+}
+
+
+
+.content {}
+
+
+
+.map {}
+
+
+
+.search {
+  &__search-bar {}
+
+  &__results {}
+}
+
+.search-bar {
+  &__input {}
+}
+
+
+
+.list {
+  &__item {}
+}
+
+.list-item {
+  &__thumb {}
+  &__title {}
+  &__decription {}
+}
+
+
+
+.search-filters {
+  &__title {}
+
+  &__list {}
+
+  &__actions {}
+}
+
+
+
+.filters {}
+
+.list {
+  &__item {}
+}
+
+.toggle-item {
+  &__title {}
+}
+
+
+
+.toggle {
+  &__checkbox {}
+
+  &__label {
+    &--own-backpacks {}
+
+    &--archaeological {}
+
+    &--attractions {}
+
+    &--buildings {}
+
+    &--cemeteries {}
+
+    &--communities {}
+
+    &--sites {}
+
+    &--markers {}
+
+    &--museums {}
+
+    &--parks {}
+
+    &--natural {}
+  }
+}
+
+
+
+.search-instructions {
+  &__section {}
+  &__actions {}
+  &__accept-button {}
+}
+
+.instructions-section {
+  &__title {}
+  &__text {}
+  &__icon {}
+}
+
+.icon-finger-nav {}
+
+.icon-target {}
