@@ -19,6 +19,12 @@
   }
 }
 
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 // Grid system
 //
 // Generate semantic grid columns with these mixins.

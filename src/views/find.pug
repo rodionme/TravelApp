@@ -12,123 +12,103 @@ block prepend body
     section#page-launch.page-container.find-page
       header.find-page__topbar.topbar
         .topbar__left
-          button(type="button") Back
+          button.topbar__button(type="button") Back
             +icon('icon-back')
 
         .topbar__center
-          button(type="button") Filter
+          button.topbar__button(type="button") Filter
             +icon('icon-marker')
 
         .topbar__right
-          button(type="button") Search
+          button.topbar__button(type="button") Search
             +icon('icon-search')
 
       main.find-page__content.content
         section.map
 
-        section.search
+        section.search.search--expanded.overlay-panel._overlay-panel--expanded
           .search__search-bar.search-bar
             input.search-bar__input(type="text", placeholder="Tap to search")
 
           .search__results
             ul.list
               li.list__item.list-item
-                img(src="//via.placeholder.com/100x100").list-item__thumb
-                h4.list-item__title Canterbury Mannor
-                p.list-item__decription The General Oliver Otis Howard House is located on the campus of Howard
+                .list-item__left.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    img.location-link__thumb(src="//via.placeholder.com/150x150")
+                .list-item__right.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    h4.location-link__title Long title of some location
+                    p.location-link__description The General Oliver Otis Howard House is located on the campus of Howardis located on the campus of Howard
 
               li.list__item.list-item
-                img(src="//via.placeholder.com/100x100").list-item__thumb
-                h4.list-item__title Canterbury Mannor
-                p.list-item__decription The General Oliver Otis Howard House is located on the campus of Howard
+                .list-item__left.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    img.location-link__thumb(src="//via.placeholder.com/150x150")
+                .list-item__right.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    h4.location-link__title Canterbury Mannor
+                    p.location-link__description The General Oliver Otis Howard House is located on the campus of Howard
 
-        section.search-filters
+              li.list__item.list-item
+                .list-item__left.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    img.location-link__thumb(src="//via.placeholder.com/150x150")
+                .list-item__right.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    h4.location-link__title Canterbury Mannor
+                    p.location-link__description The General Oliver Otis Howard House is located on the campus of Howard
+
+              li.list__item.list-item
+                .list-item__left.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    img.location-link__thumb(src="//via.placeholder.com/150x150")
+                .list-item__right.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    h4.location-link__title Canterbury Mannor
+                    p.location-link__description The General Oliver Otis Howard House is located on the campus of Howard
+
+              li.list__item.list-item
+                .list-item__left.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    img.location-link__thumb(src="//via.placeholder.com/150x150")
+                .list-item__right.list-item__side
+                  a.list-item__link.location-link(href="#")
+                    h4.location-link__title Canterbury Mannor
+                    p.location-link__description The General Oliver Otis Howard House is located on the campus of Howard
+
+        section.search-filters.overlay-panel._overlay-panel--expanded
           h4.search-filters__title Please select layers and backpacks to include
 
           .search-filters__list.filters
             ul.list
-              li.list__item.toggle-item
-                span.toggle-item__title My Backpacks
 
-                .toggle
-                  input.toggle__checkbox#checkbox-1(type="checkbox")
-                  label.toggle__label.toggle__label--own-backpacks(for="checkbox-1")
 
-              li.list__item.toggle-item
-                span.toggle-item__title Archaeological Sites
+              mixin toggle-item(id, title, klass)
+                li.list__item
+                  label.toggle-item(for=id)
+                    input.toggle-item__checkbox(id=id type="checkbox", name=klass)
+                    h3.toggle-item__title #{title}
+                    div(class="toggle-item__handler toggle-item__handler--" + klass)
 
-                .toggle
-                  input.toggle__checkbox#checkbox-2(type="checkbox")
-                  label.toggle__label.toggle__label--archaeological(for="checkbox-2")
 
-              li.list__item.toggle-item
-                span.toggle-item__title Cultural Attractions
-
-                .toggle
-                  input.toggle__checkbox#checkbox-3(type="checkbox")
-                  label.toggle__label.toggle__label--attractions(for="checkbox-3")
-
-              li.list__item.toggle-item
-                span.toggle-item__title Historic Buildings
-
-                .toggle
-                  input.toggle__checkbox#checkbox-4(type="checkbox")
-                  label.toggle__label.toggle__label--buildings(for="checkbox-4")
-
-              li.list__item.toggle-item
-                span.toggle-item__title Historic Cemeteries
-
-                .toggle
-                  input.toggle__checkbox#checkbox-5(type="checkbox")
-                  label.toggle__label.toggle__label--cemeteries(for="checkbox-5")
-
-              li.list__item.toggle-item
-                span.toggle-item__title Historic Communities
-
-                .toggle
-                  input.toggle__checkbox#checkbox-6(type="checkbox")
-                  label.toggle__label.toggle__label--communities(for="checkbox-6")
-
-              li.list__item.toggle-item
-                span.toggle-item__title Historic Sites
-
-                .toggle
-                  input.toggle__checkbox#checkbox-7(type="checkbox")
-                  label.toggle__label.toggle__label--sites(for="checkbox-7")
-
-              li.list__item.toggle-item
-                span.toggle-item__title Historic Markers
-
-                .toggle
-                  input.toggle__checkbox#checkbox-8(type="checkbox")
-                  label.toggle__label.toggle__label--markers(for="checkbox-8")
-
-              li.list__item.toggle-item
-                span.toggle-item__title Museums
-
-                .toggle
-                  input.toggle__checkbox#checkbox-9(type="checkbox")
-                  label.toggle__label.toggle__label--museums(for="checkbox-9")
-
-              li.list__item.toggle-item
-                span.toggle-item__title National Parks
-
-                .toggle
-                  input.toggle__checkbox#checkbox-10(type="checkbox")
-                  label.toggle__label.toggle__label--parks(for="checkbox-10")
-
-              li.list__item.toggle-item
-                span.toggle-item__title Natural History Sites
-
-                .toggle
-                  input.toggle__checkbox#checkbox-11(type="checkbox")
-                  label.toggle__label.toggle__label--natural(for="checkbox-11")
+              +toggle-item('checkbox-1', 'My Backpacks', 'own-backpacks')
+              +toggle-item('checkbox-2', 'Archaeological Sites', 'archaeological')
+              +toggle-item('checkbox-3', 'Cultural Attractions', 'attractions')
+              +toggle-item('checkbox-4', 'Historic Buildings', 'buildings')
+              +toggle-item('checkbox-5', 'Historic Cemeteries', 'cemeteries')
+              +toggle-item('checkbox-6', 'Historic Communities', 'communities')
+              +toggle-item('checkbox-7', 'Historic Sites', 'sites')
+              +toggle-item('checkbox-8', 'Historic Markers', 'markers')
+              +toggle-item('checkbox-9', 'Museums', 'museums')
+              +toggle-item('checkbox-10', 'National Parks', 'parks')
+              +toggle-item('checkbox-11', 'Natural History Sites', 'natural')
 
           .search-filters__actions
-            button(type="button") Cancel
-            button(type="button") Save
+            button.search-filters__action.search-filters__action--negative(type="button") Cancel
+            button.search-filters__action.search-filters__action--positive(type="button") Save
 
-        section.search-instructions
+        section.search-instructions.overlay-panel._overlay-panel--expanded
           .search-instructions__section.instructions-section
             h3.instructions-section__title What to do
             p.instructions-section__text Move the map with your finger and touch the marker icon to show sites
