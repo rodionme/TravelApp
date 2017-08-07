@@ -1,13 +1,16 @@
 mixin topbar(leftText, centerText, rightText, leftIcon, centerIcon, rightIcon)
-  header.find-page__topbar.topbar
-    .topbar__left
-      button.topbar__button(type="button", title=leftText)= leftText
-        +icon(leftIcon)
+  header.topbar
+    .topbar__left.topbar__part
+      if leftText
+        button.topbar__button(type="button", title=leftText)= leftText
+          +icon(leftIcon)
 
-    .topbar__center
-      button.topbar__button(type="button", title=centerText)= centerText
-        +icon(centerIcon)
+    .topbar__center.topbar__part
+      if centerText
+        button.topbar__button(type="button", title=centerText)= centerText
+          +icon(centerIcon)
 
-    .topbar__right
-      button.topbar__button(type="button", title=rightText)= rightText
-        +icon(rightIcon)
+    .topbar__right.topbar__part
+      if rightText
+        button.topbar__button(type="button", title=rightText)= rightText
+          +icon(rightIcon)
