@@ -5,23 +5,13 @@ block pageTitle
 block prepend body
   body
     include svg/_icon-template
-      include svg/_icon-back
-      include svg/_icon-marker
-      include svg/_icon-search
+    include svg/_icon-back
+    include svg/_icon-marker
+    include svg/_icon-search
+    include parts/_topbar
 
     section#page-launch.page-container.find-page
-      header.find-page__topbar.topbar
-        .topbar__left
-          button.topbar__button(type="button") Back
-            +icon('icon-back')
-
-        .topbar__center
-          button.topbar__button(type="button") Filter
-            +icon('icon-marker')
-
-        .topbar__right
-          button.topbar__button(type="button") Search
-            +icon('icon-search')
+      +topbar('Back', 'Filter', 'Search', 'icon-back', 'icon-marker', 'icon-search')
 
       main.find-page__content.content
         section.map
