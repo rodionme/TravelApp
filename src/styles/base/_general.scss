@@ -14,9 +14,15 @@ body {
   font-weight: 300;
   font-size: $base-font-size;
   font-family: Roboto, sans-serif;
-  -webkit-touch-callout: none;     // prevent callout to copy image, etc when tap to hold
-  -webkit-text-size-adjust: none;  // prevent webkit from resizing text to fit
-  -webkit-user-select: none;       // prevent copy paste, to allow, change 'none' to 'text'
+}
+
+
+::selection {
+  background: #ccc;
+}
+
+::-moz-selection {
+  background: #ccc;
 }
 
 .page-container {
@@ -24,6 +30,13 @@ body {
   flex-direction: column;
   min-height: 100%;
   background: #000;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .overlay-panel {

@@ -1,0 +1,33 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: 20px 40px;
+  background: #000;
+
+  &__part {
+    min-width: 56px;
+  }
+
+  &__left {}
+
+  &__center {}
+
+  &__right {}
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    width: 56px;
+    padding: 0;
+    border: none;
+    font-size: 0;
+    background-color: black;
+    outline: none;
+    cursor: pointer;
+
+    .icon {
+      fill: white;
+    }
+  }
+}

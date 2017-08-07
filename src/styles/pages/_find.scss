@@ -1,47 +1,5 @@
 .find-page {
-  &__topbar {}
-
   &__content {}
-}
-
-
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: #000;
-
-  &__left {}
-
-  &__center {}
-
-  &__right {}
-
-  &__button {
-    display: flex;
-    flex-direction: column;
-    width: 56px;
-    padding: 0;
-    border: none;
-    font-size: 0;
-    background-color: black;
-    outline: none;
-    cursor: pointer;
-
-    .icon {
-      fill: white;
-    }
-  }
-}
-
-
-
-.content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
 }
 
 
@@ -75,7 +33,7 @@
     padding-left: 40px;
   }
 
-  &--expanded {
+  &--expanded.overlay-panel--expanded {
     height: 100%;
   }
 
@@ -115,7 +73,7 @@
     color: white;
     background-color: transparent;
     outline: none;
-    // Add placeholder color
+    // TODO: Add placeholder color
   }
 }
 
@@ -229,6 +187,7 @@
     font-size: 34px;
     background-color: transparent;
     cursor: pointer;
+    outline: none;
 
     & + & {
       border-left: 1px solid #ccc;
@@ -258,18 +217,6 @@
   $height: 60px;
   $label: 52px;
   $padding: 4px;
-
-  $own-backpacks: #4bafe3;
-  $archaeological: #ee1c25;
-  $attractions: #f36523;
-  $buildings: #ffcc00;
-  $cemeteries: #7d7d7d;
-  $communities: #8781bd;
-  $sites: #f06eaa;
-  $markers: #a0309e;
-  $museums: #0072bb;
-  $parks: #a67c52;
-  $natural: #3ab54a;
 
   display: flex;
   justify-content: space-between;

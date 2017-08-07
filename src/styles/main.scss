@@ -10,7 +10,7 @@
 // PARTS
 @import "parts/loader";
 
-@import "parts/header";
+@import "parts/topbar";
 @import "parts/footer";
 
 // PLUGINS
@@ -19,3 +19,4 @@
 // PAGES
 @import "pages/launch";
 @import "pages/find";
+@import "pages/location";
