@@ -1,0 +1,99 @@
+.location-page {
+  &__content {}
+}
+
+
+
+.location {
+  overflow: auto;
+  padding: 30px $base-side-padding;
+  color: #fff;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 48px;
+  }
+
+  &__distance {
+    display: flex;
+    align-items: center;
+  }
+
+  &__distance-pin {}
+
+  &__distance-value {
+    font-size: 24px;
+  }
+
+  &__content {}
+
+  &__image-wrapper {}
+
+  &__image {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__description-wrapper {}
+
+  &__description {
+    font-size: 30px;
+  }
+
+  &__credits {}
+}
+
+
+
+.location-distance-pin {
+  width: 12px;
+  height: 20px;
+  margin-right: 10px;
+  // TODO: Pin with CSS3
+
+  .location--own-backpacks &  { background-color: $own-backpacks; }
+  .location--archaeological & { background-color: $archaeological; }
+  .location--attractions &    { background-color: $attractions; }
+  .location--buildings &      { background-color: $buildings; }
+  .location--cemeteries &     { background-color: $cemeteries; }
+  .location--communities &    { background-color: $communities; }
+  .location--sites &          { background-color: $sites; }
+  .location--markers &        { background-color: $markers; }
+  .location--museums &        { background-color: $museums; }
+  .location--parks &          { background-color: $parks; }
+  .location--natural &        { background-color: $natural; }
+}
+
+
+
+.location-credits {
+  margin-top: 40px;
+  padding-bottom: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 30px;
+
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  &__text {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    color: #fff;
+  }
+}
