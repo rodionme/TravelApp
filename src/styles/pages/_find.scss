@@ -29,8 +29,8 @@
     display: none;
     height: 100%;
     overflow: auto;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: $base-side-padding;
+    padding-left: $base-side-padding;
   }
 
   &--expanded.overlay-panel--expanded {
@@ -44,7 +44,7 @@
       content: '';
       position: absolute;
       top: 100%;
-      left: 40px + 50px - 22px;   // Left padding + half of the thumb - half of the triangle
+      left: $base-side-padding + 50px - 22px;   // Left padding + half of the thumb - half of the triangle
       display: block;
       width: 0;
       height: 0;
@@ -56,24 +56,6 @@
 
   &--expanded &__results {
     display: block;
-  }
-}
-
-.search-bar {
-  padding: 20px 40px;
-  background-color: $green;
-
-  &__input {
-    width: 100%;
-    height: 56px;
-    border: none;
-    font-weight: 100;
-    font-size: 36px;
-    letter-spacing: 1px;
-    color: white;
-    background-color: transparent;
-    outline: none;
-    // TODO: Add placeholder color
   }
 }
 
