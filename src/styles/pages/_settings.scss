@@ -1,9 +1,7 @@
 .settings-page {
   &__content {
-    display: flex;
-    flex-direction: column;
-    padding-right: $base-side-padding;
-    padding-left: $base-side-padding;
+    height: 100%;
+    overflow: auto;
     background: #000 url("../img/settings-bg.jpg") top left no-repeat;
   }
 }
@@ -13,7 +11,8 @@
 .settings-list {
   margin-top: 40px;
   margin-bottom: 40px;
-  padding-left: 0;
+  padding-right: $base-side-padding;
+  padding-left: $base-side-padding;
   list-style: none;
 }
 
@@ -91,6 +90,7 @@
     &:after {
       content: '—';
       font-size: 33px;
+      transition: .2s ease all;
     }
   }
 }
