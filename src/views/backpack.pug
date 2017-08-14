@@ -1,0 +1,37 @@
+extend _template
+
+block pageTitle
+  - var pageTitle = 'Backpack'
+block prepend body
+  body
+    include svg/_icon-template
+    include svg/_icon-back
+    include svg/_icon-map
+    include parts/_topbar
+
+    section#page-backpack.page-container.backpack-page
+      +topbar('Back', '', 'Map', 'icon-back', '', 'icon-map')
+
+      main.backpack-page__content.content
+        article.backpack.backpack--own-backpacks
+          header.backpack__header
+            h2.backpack__title Yellowstone National Park Long Name
+
+          main.backpack__content
+            .backpack__image-wrapper
+              img.backpack__image(src="//via.placeholder.com/800x400", alt="Canterbury Mannor")
+
+            .backpack__description-wrapper
+              p.backpack__description
+                |This backpack covers the entirely of America's first National Park. Areas include Norris, Mammoth,
+                | Canyon Village, and many more.
+
+            section.backpacks.backpacks--inverted
+              h4.backpacks__title Locations
+
+              ul.backpacks-search__results-list.backpacks-list
+                li.backpacks-list__item.backpacks-list-item
+                  a.backpacks-list-item__link.backpack-link(href="#") Yellowstone National Park
+
+                li.backpacks-list__item.backpacks-list-item
+                  a.backpacks-list-item__link.backpack-link(href="#") Washington DC Monuments
