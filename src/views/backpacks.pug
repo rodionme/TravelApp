@@ -1,0 +1,40 @@
+extend _template
+
+block pageTitle
+  - var pageTitle = 'Backpacks'
+block prepend body
+  body
+    include svg/_icon-template
+    include svg/_icon-back
+    include svg/_icon-map
+    include svg/_icon-search
+    include parts/_topbar
+
+    section#page-launch.page-container.backpacks-page
+      +topbar('Back', 'Map', 'Search', 'icon-back', 'icon-map', 'icon-search')
+
+      main.backpacks-page__content.content
+        section.backpacks-search
+          .backpacks-search__search-bar.search-bar
+            input.search-bar__input(type="text", placeholder="Tap to search backpacks")
+
+          .backpacks-search__results
+            section.backpacks.backpacks--own
+              h4.backpacks__title Your Backpacks
+
+              ul.backpacks-search__results-list.backpacks-list
+                li.backpacks-list__item.backpacks-list-item
+                  a.backpacks-list-item__link.backpack-link(href="#") Yellowstone National Park
+
+                li.backpacks-list__item.backpacks-list-item
+                  a.backpacks-list-item__link.backpack-link(href="#") Washington DC Monuments
+
+            section.backpacks.backpacks--public
+              h4.backpacks__title Public Backpacks
+
+              ul.backpacks-search__results-list.backpacks-list
+                li.backpacks-list__item.backpacks-list-item
+                  a.backpacks-list-item__link.backpack-link(href="#") Atlanta National Regional Parks
+
+                li.backpacks-list__item.backpacks-list-item
+                  a.backpacks-list-item__link.backpack-link(href="#") Lewis and Clark in Montana

@@ -1,0 +1,72 @@
+.backpacks-page {
+  height: 100%;
+
+  &__content {
+    background-color: #fff;
+  }
+}
+
+
+
+.backpacks-search {
+  display: flex;
+  flex-direction: column;
+
+  &__search-bar {}
+
+  &__results {
+    overflow: auto;
+  }
+
+  &__results-list {}
+}
+
+
+.backpacks {
+  padding-right: $base-side-padding;
+  padding-left: $base-side-padding;
+  background-color: #fff;
+
+  & + & {
+    border-top: 1px solid #c8c8c8;
+  }
+
+  &--own {}
+
+  &--public {}
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 72px;
+    font-size: 28px;
+    color: #555;
+  }
+}
+
+.backpacks-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  &__item {}
+}
+
+.backpacks-list-item {
+  border-top: 1px solid #c8c8c8;
+
+  &__link {}
+}
+
+.backpack-link {
+  line-height: 86px;
+  font-size: 34px;
+  text-decoration: none;
+  color: #000;
+
+  .backpacks--own & {
+    color: $blue;
+  }
+}
