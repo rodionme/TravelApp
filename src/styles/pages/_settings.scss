@@ -72,6 +72,7 @@
   
   &__title {
     font-size: 28px;
+    text-align: right;
     color: #999;
   }
   
@@ -82,6 +83,7 @@
     position: relative;
     width: 44px;
     height: 44px;
+    flex-shrink: 0;
     margin-left: 20px;
     border-radius: 50%;
     background-color: #bbb;
