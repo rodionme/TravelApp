@@ -1,0 +1,53 @@
+.credits-page {
+  &__content {
+    padding-right: $base-side-padding;
+    padding-left: $base-side-padding;
+    background: #fff;
+  }
+}
+
+
+
+.credits {
+  overflow: auto;
+
+  &__title {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-weight: 300;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+.credits-footer {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 28px;
+  }
+
+  &__name {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-size: 44px;
+  }
+
+  &__description {
+    font-size: 24px;
+  }
+
+  &__credit {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #000;
+  }
+}

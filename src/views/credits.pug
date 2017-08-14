@@ -1,0 +1,22 @@
+extend _template
+
+block pageTitle
+  - var pageTitle = 'Credits'
+block prepend body
+  body
+    include svg/_icon-template
+    include svg/_icon-back
+    include svg/_icon-faq
+    include parts/_topbar
+
+    section#page-credits.page-container.credits-page
+      +topbar('Back', 'Credits', 'FAQ', 'icon-back', '%text%', 'icon-faq')
+
+      main.credits-page__content.content.credits
+        h1.credits__title TravelApp is a free application that links visitors to nearby historical sites using device's geolocation
+
+        footer.credits-footer
+          span.credits-footer__title Designed and developed by
+          span.credits-footer__name Rodion Mescheryakov
+          span.credits-footer__description Front-end developer from Ukraine, Dnipro
+          a.credits-footer__credit(href="mailto:msrodion@gmail.com") Mail me!
