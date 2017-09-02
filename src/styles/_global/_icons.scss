@@ -1,0 +1,20 @@
+.icon-back,
+.icon-bell,
+.icon-faq,
+.icon-map,
+.icon-marker,
+.icon-next,
+.icon-search,
+.icon-tourist,
+.icon-question {
+  width: 56px;
+  height: 56px;
+  fill: #000;
+}
+
+.icon-question {
+  width: 29px;
+  height: 50px;
+  background: url("./~/assets/img/icons/icon-question.png") no-repeat;
+  background-size: contain;
+}
