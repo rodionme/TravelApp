@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LaunchComponent } from './launch/launch.component';
+import { FindComponent } from './find/find.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LaunchComponent
+    LaunchComponent,
+    FindComponent
   ],
   imports: [
     BrowserModule,

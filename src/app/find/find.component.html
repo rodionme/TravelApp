@@ -1,0 +1,184 @@
+<section class="page-container find-page" id="page-launch">
+  <header class="topbar">
+    <div class="topbar__left topbar__part">
+      <button class="topbar__button" type="button" title="Back" routerLink="/">Back
+        <svg class="icon icon-back"><use xlink:href="#icon-back"></use></svg>
+      </button>
+    </div>
+
+    <div class="topbar__center topbar__part">
+      <button class="topbar__button" type="button" title="Filter">Filter
+        <svg class="icon icon-marker"><use xlink:href="#icon-marker"></use></svg>
+      </button>
+    </div>
+
+    <div class="topbar__right topbar__part">
+      <button class="topbar__button" type="button" title="Search">Search
+        <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="find-page__content content">
+    <section class="map"></section>
+
+    <section class="search search--expanded overlay-panel _overlay-panel--expanded">
+      <div class="search__search-bar search-bar">
+        <input class="search-bar__input" type="text" placeholder="Tap to search">
+      </div>
+
+      <div class="search__results">
+        <ul class="list">
+          <li class="list__item list-item">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+              <h4 class="location-link__title">Long title of some location</h4>
+              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howardis located on the campus of Howard</p></a></div>
+          </li>
+          <li class="list__item list-item">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+              <h4 class="location-link__title">Canterbury Mannor</h4>
+              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
+          </li>
+          <li class="list__item list-item">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+              <h4 class="location-link__title">Canterbury Mannor</h4>
+              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
+          </li>
+          <li class="list__item list-item">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+              <h4 class="location-link__title">Canterbury Mannor</h4>
+              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
+          </li>
+          <li class="list__item list-item">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+              <h4 class="location-link__title">Canterbury Mannor</h4>
+              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="search-filters overlay-panel _overlay-panel--expanded">
+      <h4 class="search-filters__title">Please select layers and backpacks to include</h4>
+      <div class="search-filters__list filters">
+        <ul class="list">
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-1">
+              <input class="toggle-item__checkbox" id="checkbox-1" type="checkbox" name="own-backpacks">
+              <h3 class="toggle-item__title">My Backpacks</h3>
+              <div class="toggle-item__handler toggle-item__handler--own-backpacks"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-2">
+              <input class="toggle-item__checkbox" id="checkbox-2" type="checkbox" name="archaeological">
+              <h3 class="toggle-item__title">Archaeological Sites</h3>
+              <div class="toggle-item__handler toggle-item__handler--archaeological"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-3">
+              <input class="toggle-item__checkbox" id="checkbox-3" type="checkbox" name="attractions">
+              <h3 class="toggle-item__title">Cultural Attractions</h3>
+              <div class="toggle-item__handler toggle-item__handler--attractions"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-4">
+              <input class="toggle-item__checkbox" id="checkbox-4" type="checkbox" name="buildings">
+              <h3 class="toggle-item__title">Historic Buildings</h3>
+              <div class="toggle-item__handler toggle-item__handler--buildings"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-5">
+              <input class="toggle-item__checkbox" id="checkbox-5" type="checkbox" name="cemeteries">
+              <h3 class="toggle-item__title">Historic Cemeteries</h3>
+              <div class="toggle-item__handler toggle-item__handler--cemeteries"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-6">
+              <input class="toggle-item__checkbox" id="checkbox-6" type="checkbox" name="communities">
+              <h3 class="toggle-item__title">Historic Communities</h3>
+              <div class="toggle-item__handler toggle-item__handler--communities"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-7">
+              <input class="toggle-item__checkbox" id="checkbox-7" type="checkbox" name="sites">
+              <h3 class="toggle-item__title">Historic Sites</h3>
+              <div class="toggle-item__handler toggle-item__handler--sites"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-8">
+              <input class="toggle-item__checkbox" id="checkbox-8" type="checkbox" name="markers">
+              <h3 class="toggle-item__title">Historic Markers</h3>
+              <div class="toggle-item__handler toggle-item__handler--markers"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-9">
+              <input class="toggle-item__checkbox" id="checkbox-9" type="checkbox" name="museums">
+              <h3 class="toggle-item__title">Museums</h3>
+              <div class="toggle-item__handler toggle-item__handler--museums"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-10">
+              <input class="toggle-item__checkbox" id="checkbox-10" type="checkbox" name="parks">
+              <h3 class="toggle-item__title">National Parks</h3>
+              <div class="toggle-item__handler toggle-item__handler--parks"></div>
+            </label>
+          </li>
+
+          <li class="list__item">
+            <label class="toggle-item" for="checkbox-11">
+              <input class="toggle-item__checkbox" id="checkbox-11" type="checkbox" name="natural">
+              <h3 class="toggle-item__title">Natural History Sites</h3>
+              <div class="toggle-item__handler toggle-item__handler--natural"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="search-filters__actions">
+        <button class="search-filters__action search-filters__action--negative" type="button">Cancel</button>
+        <button class="search-filters__action search-filters__action--positive" type="button">Save</button>
+      </div>
+    </section>
+
+    <section class="search-instructions overlay-panel _overlay-panel--expanded">
+      <div class="search-instructions__section instructions-section">
+        <h3 class="instructions-section__title">What to do</h3>
+        <p class="instructions-section__text">Move the map with your finger and touch the marker icon to show sites</p>
+        <div class="instructions-section__icon icon-finger-nav"></div>
+      </div>
+
+      <div class="search-instructions__section instructions-section">
+        <h3 class="instructions-section__title">Location</h3>
+        <p class="instructions-section__text">Click the location pin to show your exact location</p>
+        <div class="instructions-section__icon icon-target"></div>
+      </div>
+
+      <div class="search-instructions__actions">
+        <button class="search-instructions__accept-button" type="button">OK</button>
+      </div>
+    </section>
+  </main>
+</section>

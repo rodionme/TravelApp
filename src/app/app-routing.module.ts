@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LaunchComponent } from './launch/launch.component';
+import { FindComponent } from './find/find.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,9 @@ const routes: Routes = [
   }, {
     path: 'launch',
     component: LaunchComponent
+  }, {
+    path: 'find',
+    component: FindComponent
   }
 ];
 
