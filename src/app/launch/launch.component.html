@@ -1,19 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
-  <symbol id="icon-search" viewbox="0 0 56 56">
-    <path d="M55.615,54.214L39.872,38.471a23.032,23.032,0,1,0-1.4,1.4L54.215,55.614A0.99,0.99,0,0,0,55.615,54.214Zm-32.65-10.28a20.97,20.97,0,1,1,20.97-20.97A20.97,20.97,0,0,1,22.965,43.934Z"></path>
-  </symbol>
-</svg>
-
-<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
-  <symbol id="icon-tourist" viewbox="0 0 35 54">
-    <path d="M20.609,9.643a4.822,4.822,0,1,0-4.8-4.821A4.809,4.809,0,0,0,20.609,9.643Zm0-7.714a2.893,2.893,0,1,1-2.878,2.893A2.886,2.886,0,0,1,20.609,1.929Zm-6.732,10.51L8.4,10.675a3.833,3.833,0,0,0-4.825,2.5L0.646,22.356a3.861,3.861,0,0,0,2.485,4.85l5.482,1.764ZM3.716,25.369a1.931,1.931,0,0,1-1.242-2.425L5.4,13.76A1.916,1.916,0,0,1,7.81,12.511l3.655,1.176L7.37,26.544Zm29.21,0.8,0-.011-8.773-2.632,0.915-2.32-0.024-.009a5.609,5.609,0,0,0,.359-1.907,5.74,5.74,0,0,0-11.148-1.968l-0.021-.007-9.591,30.1a4.794,4.794,0,0,0,8.875,3.627l0.024,0.008,3.235-8.765,3.19,8.675,0.026-.008a4.8,4.8,0,0,0,9.033-3.2h0L22.873,29.265l8.448,2.441,0-.009a2.823,2.823,0,0,0,.8.125A2.887,2.887,0,0,0,32.926,26.165Zm-0.8,3.728a0.921,0.921,0,0,1-.265-0.054l0,0.014L21.65,26.9l-0.008.026a0.916,0.916,0,0,0-.253-0.052,0.962,0.962,0,0,0-.959.964,0.931,0.931,0,0,0,.069.341l-0.007,0L27.2,48.323l0.035,0.133-0.011,0a2.867,2.867,0,0,1-5.491,1.647l-0.143-.3L17.712,39.261l-0.034.011a0.939,0.939,0,0,0-1.806-.038l-0.011,0L11.8,50.247l-0.09.2-0.027-.009a2.869,2.869,0,0,1-5.46-1.256,2.922,2.922,0,0,1,.064-0.6l0,0,0-.017,0.012,0,9.759-30.632,0.013,0a3.825,3.825,0,0,1,7.211,2.553l0.179,0.063v0.021L23.283,20.5l-1.251,3.218a0.947,0.947,0,0,0-.1.416,0.96,0.96,0,0,0,.607.893l0,0.013,9.584,2.876,0.158,0.075a0.951,0.951,0,0,1,.809.934A0.962,0.962,0,0,1,32.122,29.893Z"></path>
-  </symbol>
-</svg>
-
-
 <section class="page-container launch-page" id="page-launch">
   <main class="launch-page__intro launch-intro">
     <h3 class="launch-intro__title">Explore history on the road</h3>
+
     <div class="launch-intro__slider slider">
       <div class="launch-intro__slide slide">
         <h4 class="slide__title">Share the Experience</h4>
@@ -25,20 +13,30 @@
       <div class="slider__dots"></div>
     </div>
   </main>
+
   <footer class="launch-page__footer">
-    <div class="launch-links"><a class="launch-links__link launch-link" href="">
-      <div class="launch-link__icon">
-        <svg class="icon icon-search">
-          <use xlink:href="#icon-search"></use>
-        </svg>
-      </div><span class="launch-link__caption">Find</span></a><a class="launch-links__link launch-link" href="">
-      <div class="launch-link__icon">
-        <svg class="icon icon-tourist">
-          <use xlink:href="#icon-tourist"></use>
-        </svg>
-      </div><span class="launch-link__caption">Backpacks</span></a><a class="launch-links__link launch-link" href="">
-      <div class="launch-link__icon">
-        <div class="icon-question"></div>
-      </div><span class="launch-link__caption">About</span></a></div>
+    <div class="launch-links">
+      <a class="launch-links__link launch-link" routerLink="/find">
+        <div class="launch-link__icon">
+          <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
+        </div>
+        <span class="launch-link__caption">Find</span>
+      </a>
+
+      <a class="launch-links__link launch-link" routerLink="/backpacks">
+        <div class="launch-link__icon">
+          <svg class="icon icon-tourist"><use xlink:href="#icon-tourist"></use></svg>
+        </div>
+        <span class="launch-link__caption">Backpacks</span>
+      </a>
+
+      <a class="launch-links__link launch-link" routerLink="/about">
+        <div class="launch-link__icon">
+          <!-- TODO: Replace to SVG icon -->
+          <div class="icon-question"></div>
+        </div>
+        <span class="launch-link__caption">About</span>
+      </a>
+    </div>
   </footer>
 </section>
