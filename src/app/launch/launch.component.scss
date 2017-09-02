@@ -3,6 +3,7 @@
 .launch-page {
   display: flex;
   flex-direction: column;
+  overflow: auto;
   padding-right: $base-side-padding;
   padding-left: $base-side-padding;
   background: #000 url("../../assets/img/launch-bg.jpg") center no-repeat;
