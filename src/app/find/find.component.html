@@ -7,13 +7,13 @@
     </div>
 
     <div class="topbar__center topbar__part">
-      <button class="topbar__button" type="button" title="Filter">Filter
+      <button class="topbar__button" type="button" title="Filter" (click)="toggleFilters()">Filter
         <svg class="icon icon-marker"><use xlink:href="#icon-marker"></use></svg>
       </button>
     </div>
 
     <div class="topbar__right topbar__part">
-      <button class="topbar__button" type="button" title="Search">Search
+      <button class="topbar__button" type="button" title="Search" (click)="toggleSearch()">Search
         <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
       </button>
     </div>
@@ -22,40 +22,44 @@
   <main class="find-page__content content">
     <section class="map"></section>
 
-    <section class="search search--expanded overlay-panel _overlay-panel--expanded">
+    <section class="search overlay-panel" [ngClass]="{'overlay-panel--expanded': isSearchOn, 'search--expanded': isSearchResultsOn}">
       <div class="search__search-bar search-bar">
-        <input class="search-bar__input" type="text" placeholder="Tap to search">
+        <input class="search-bar__input" type="text" placeholder="Input more than 1 letter to search" [(ngModel)]="searchQuery" (keyup)="checkSearchInput()">
       </div>
 
       <div class="search__results">
         <ul class="list">
           <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
               <h4 class="location-link__title">Long title of some location</h4>
               <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howardis located on the campus of Howard</p></a></div>
           </li>
+
           <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
               <h4 class="location-link__title">Canterbury Mannor</h4>
               <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
           </li>
+
           <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
               <h4 class="location-link__title">Canterbury Mannor</h4>
               <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
           </li>
+
           <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
               <h4 class="location-link__title">Canterbury Mannor</h4>
               <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
           </li>
+
           <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" href="#"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" href="#">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
               <h4 class="location-link__title">Canterbury Mannor</h4>
               <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
           </li>
@@ -63,7 +67,7 @@
       </div>
     </section>
 
-    <section class="search-filters overlay-panel _overlay-panel--expanded">
+    <section class="search-filters overlay-panel" [class.overlay-panel--expanded]="isFiltersOn">
       <h4 class="search-filters__title">Please select layers and backpacks to include</h4>
       <div class="search-filters__list filters">
         <ul class="list">
@@ -158,12 +162,12 @@
       </div>
 
       <div class="search-filters__actions">
-        <button class="search-filters__action search-filters__action--negative" type="button">Cancel</button>
-        <button class="search-filters__action search-filters__action--positive" type="button">Save</button>
+        <button class="search-filters__action search-filters__action--negative" type="button" (click)="cancelFilters()">Cancel</button>
+        <button class="search-filters__action search-filters__action--positive" type="button" (click)="saveFilters()">Save</button>
       </div>
     </section>
 
-    <section class="search-instructions overlay-panel _overlay-panel--expanded">
+    <section class="search-instructions overlay-panel" [class.overlay-panel--expanded]="isInstructionsOn">
       <div class="search-instructions__section instructions-section">
         <h3 class="instructions-section__title">What to do</h3>
         <p class="instructions-section__text">Move the map with your finger and touch the marker icon to show sites</p>
@@ -177,7 +181,7 @@
       </div>
 
       <div class="search-instructions__actions">
-        <button class="search-instructions__accept-button" type="button">OK</button>
+        <button class="search-instructions__accept-button" type="button" (click)="closeInstructions()">OK</button>
       </div>
     </section>
   </main>
