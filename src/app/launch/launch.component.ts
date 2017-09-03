@@ -8,7 +8,7 @@ import { Globals } from '../globals';
   styleUrls: ['./launch.component.scss']
 })
 export class LaunchComponent implements OnInit {
-  private APP_TITLE = Globals.APP_TITLE;
+  APP_TITLE = Globals.APP_TITLE;
 
   constructor() {}
 

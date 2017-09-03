@@ -8,7 +8,7 @@ import { Globals } from './../globals';
   styleUrls: ['./faq.component.scss']
 })
 export class FaqComponent implements OnInit {
-  private APP_TITLE = Globals.APP_TITLE;
+  APP_TITLE = Globals.APP_TITLE;
 
   constructor() {}
 

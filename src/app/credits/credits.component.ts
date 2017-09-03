@@ -8,7 +8,7 @@ import { Globals } from '../globals';
   styleUrls: ['./credits.component.scss']
 })
 export class CreditsComponent implements OnInit {
-  private APP_TITLE = Globals.APP_TITLE;
+  APP_TITLE = Globals.APP_TITLE;
 
   constructor() {}
 
