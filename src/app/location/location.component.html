@@ -1,18 +1,17 @@
 <section class="page-container location-page" id="page-launch">
   <header class="topbar">
     <div class="topbar__left topbar__part">
-      <button class="topbar__button" type="button" title="Back" routerLink="/">Back
+      <button class="topbar__button" type="button" title="Back" (click)="goBack()">Back
         <svg class="icon icon-back"><use xlink:href="#icon-back"></use></svg>
       </button>
     </div>
 
-    <div class="topbar__center topbar__part">
+    <div class="topbar__center topbar__part"><span class="topbar__title">Location</span></div>
+
+    <div class="topbar__right topbar__part">
       <button class="topbar__button" type="button" title="Map" routerLink="/find">Map
         <svg class="icon icon-map"><use xlink:href="#icon-map"></use></svg>
       </button>
-    </div>
-
-    <div class="topbar__right topbar__part">
     </div>
   </header>
 

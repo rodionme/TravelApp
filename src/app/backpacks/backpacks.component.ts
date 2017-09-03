@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-backpacks',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./backpacks.component.scss']
 })
 export class BackpacksComponent implements OnInit {
+  constructor(private location: Location) { }
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  goBack(): void {
+    this.location.back();
   }
-
 }

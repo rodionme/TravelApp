@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { Globals } from './../globals';
 
@@ -10,7 +11,11 @@ import { Globals } from './../globals';
 export class FaqComponent implements OnInit {
   APP_TITLE = Globals.APP_TITLE;
 
-  constructor() {}
+  constructor(private location: Location) {}
 
   ngOnInit() {}
+
+  goBack(): void {
+    this.location.back();
+  }
 }

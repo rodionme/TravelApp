@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-find',
@@ -16,9 +17,13 @@ export class FindComponent implements OnInit {
   isSearchOn: boolean = false;
   isSearchResultsOn: boolean = false;
 
-  constructor() {}
+  constructor(private location: Location) {}
 
   ngOnInit() {}
+
+  goBack(): void {
+    this.location.back();
+  }
 
   closeInstructions(): void {
     // TODO: Save the state to permanent storage to avoid annoying
