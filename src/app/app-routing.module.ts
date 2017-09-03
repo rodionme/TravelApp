@@ -5,6 +5,7 @@ import { LaunchComponent } from './launch/launch.component';
 import { FindComponent } from './find/find.component';
 import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
+import { BackpacksComponent } from './backpacks/backpacks.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   }, {
     path: 'faq',
     component: FaqComponent
+  }, {
+    path: 'backpacks',
+    component: BackpacksComponent
   }
 ];
 

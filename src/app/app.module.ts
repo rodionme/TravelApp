@@ -7,6 +7,7 @@ import { LaunchComponent } from './launch/launch.component';
 import { FindComponent } from './find/find.component';
 import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
+import { BackpacksComponent } from './backpacks/backpacks.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FaqComponent } from './faq/faq.component';
     LaunchComponent,
     FindComponent,
     CreditsComponent,
-    FaqComponent
+    FaqComponent,
+    BackpacksComponent
   ],
   imports: [
     BrowserModule,

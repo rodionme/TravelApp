@@ -1,6 +1,11 @@
 .search-bar {
+  display: none;
   padding: 20px 40px;
   background-color: $green;
+
+  &--expanded {
+    display: block;
+  }
 
   &__input {
     width: 100%;
