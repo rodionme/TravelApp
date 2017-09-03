@@ -8,6 +8,7 @@ import { FaqComponent } from './faq/faq.component';
 import { BackpacksComponent } from './backpacks/backpacks.component';
 import { BackpackComponent } from './backpack/backpack.component';
 import { LocationComponent } from './location/location.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,9 @@ const routes: Routes = [
   }, {
     path: 'location',
     component: LocationComponent
+  }, {
+    path: 'settings',
+    component: SettingsComponent
   }
 ];
 

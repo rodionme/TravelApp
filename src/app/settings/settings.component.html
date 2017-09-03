@@ -1,0 +1,77 @@
+<section class="page-container settings-page" id="page-launch">
+  <header class="topbar">
+    <div class="topbar__left topbar__part">
+      <button class="topbar__button" type="button" title="Back" routerLink="/">Back
+        <svg class="icon icon-back"><use xlink:href="#icon-back"></use></svg>
+      </button>
+    </div>
+
+    <div class="topbar__center topbar__part"><span class="topbar__title">Settings</span></div>
+
+    <div class="topbar__right topbar__part">
+      <button class="topbar__button" type="button" title="Question" routerLink="/faq">Question
+        <svg class="icon icon-faq"><use xlink:href="#icon-faq"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="settings-page__content content">
+    <ul class="settings-list">
+      <li class="setting-item"><span class="setting-item__title">Distance</span>
+        <div class="radio-items">
+          <label class="radio-item" for="radio-1-1">
+            <input class="radio-item__radiobox" id="radio-1-1" type="radio" name="distance" checked><span class="radio-item__title">Standart US</span>
+            <div class="radio-item__handler"></div>
+          </label>
+
+          <label class="radio-item" for="radio-1-2">
+            <input class="radio-item__radiobox" id="radio-1-2" type="radio" name="distance"><span class="radio-item__title">Metric</span>
+            <div class="radio-item__handler"></div>
+          </label>
+        </div>
+      </li>
+
+      <li class="setting-item"><span class="setting-item__title">Map Refresh</span>
+        <div class="radio-items">
+          <label class="radio-item" for="radio-2-1">
+            <input class="radio-item__radiobox" id="radio-2-1" type="radio" name="refresh" checked><span class="radio-item__title">5 min</span>
+            <div class="radio-item__handler"></div>
+          </label>
+
+          <label class="radio-item" for="radio-2-2">
+            <input class="radio-item__radiobox" id="radio-2-2" type="radio" name="refresh"><span class="radio-item__title">1 min</span>
+            <div class="radio-item__handler"></div>
+          </label>
+        </div>
+      </li>
+
+      <li class="setting-item"><span class="setting-item__title">Map Type</span>
+        <div class="radio-items">
+          <label class="radio-item" for="radio-3-1">
+            <input class="radio-item__radiobox" id="radio-3-1" type="radio" name="map-type" checked><span class="radio-item__title">Map</span>
+            <div class="radio-item__handler"></div>
+          </label>
+
+          <label class="radio-item" for="radio-3-2">
+            <input class="radio-item__radiobox" id="radio-3-2" type="radio" name="map-type"><span class="radio-item__title">Satellite</span>
+            <div class="radio-item__handler"></div>
+          </label>
+        </div>
+      </li>
+
+      <li class="setting-item"><span class="setting-item__title">Public Backpacks</span>
+        <div class="radio-items">
+          <label class="radio-item" for="radio-4-1">
+            <input class="radio-item__radiobox" id="radio-4-1" type="radio" name="backpacks" checked><span class="radio-item__title">Show</span>
+            <div class="radio-item__handler"></div>
+          </label>
+
+          <label class="radio-item" for="radio-4-2">
+            <input class="radio-item__radiobox" id="radio-4-2" type="radio" name="backpacks"><span class="radio-item__title">Hide</span>
+            <div class="radio-item__handler"></div>
+          </label>
+        </div>
+      </li>
+    </ul>
+  </main>
+</section>

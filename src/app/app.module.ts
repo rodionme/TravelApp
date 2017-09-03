@@ -10,6 +10,7 @@ import { FaqComponent } from './faq/faq.component';
 import { BackpacksComponent } from './backpacks/backpacks.component';
 import { BackpackComponent } from './backpack/backpack.component';
 import { LocationComponent } from './location/location.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LocationComponent } from './location/location.component';
     FaqComponent,
     BackpacksComponent,
     BackpackComponent,
-    LocationComponent
+    LocationComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
