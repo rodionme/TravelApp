@@ -9,6 +9,7 @@ import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
 import { BackpacksComponent } from './backpacks/backpacks.component';
 import { BackpackComponent } from './backpack/backpack.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BackpackComponent } from './backpack/backpack.component';
     CreditsComponent,
     FaqComponent,
     BackpacksComponent,
-    BackpackComponent
+    BackpackComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
