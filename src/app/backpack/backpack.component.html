@@ -1,0 +1,50 @@
+<section class="page-container backpack-page" id="page-backpack">
+  <header class="topbar">
+    <div class="topbar__left topbar__part">
+      <button class="topbar__button" type="button" title="Back" routerLink="/">Back
+        <svg class="icon icon-back"><use xlink:href="#icon-back"></use></svg>
+      </button>
+    </div>
+
+    <div class="topbar__center topbar__part"><span class="topbar__title"></span></div>
+
+    <div class="topbar__right topbar__part">
+      <button class="topbar__button" type="button" title="Map" routerLink="/find">Map
+        <svg class="icon icon-map"><use xlink:href="#icon-map"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="backpack-page__content content">
+    <article class="backpack backpack--own-backpacks">
+      <header class="backpack__header">
+        <h2 class="backpack__title">Yellowstone National Park Long Name</h2>
+      </header>
+
+      <main class="backpack__content">
+        <div class="backpack__image-wrapper"><img class="backpack__image" src="//via.placeholder.com/800x400" alt="Canterbury Mannor"></div>
+
+        <div class="backpack__description-wrapper">
+          <p class="backpack__description">
+            This backpack covers the entirely of America's first National Park. Areas include Norris, Mammoth,
+            Canyon Village, and many more.
+          </p>
+        </div>
+
+        <section class="locations locations--inverted">
+          <h4 class="locations__title">Locations</h4>
+
+          <ul class="locations-search__results-list locations-list">
+            <li class="locations-list__item locations-list-item">
+              <a class="locations-list-item__link location-link" routerLink="/location">Yellowstone National Park</a>
+            </li>
+
+            <li class="locations-list__item locations-list-item">
+              <a class="locations-list-item__link location-link" routerLink="/location">Washington DC Monuments</a>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </article>
+  </main>
+</section>

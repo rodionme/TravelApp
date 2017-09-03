@@ -6,6 +6,7 @@ import { FindComponent } from './find/find.component';
 import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
 import { BackpacksComponent } from './backpacks/backpacks.component';
+import { BackpackComponent } from './backpack/backpack.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
   }, {
     path: 'backpacks',
     component: BackpacksComponent
+  }, {
+    path: 'backpack',
+    component: BackpackComponent
   }
 ];
 

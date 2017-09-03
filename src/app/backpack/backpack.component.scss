@@ -1,0 +1,113 @@
+@import "../../styles/shared";
+
+.backpack-page {
+  &__content {
+    background: #000 url("../../assets/img/map-bg.jpg") top left no-repeat;
+  }
+}
+
+
+
+.backpack {
+  overflow: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: $base-side-padding;
+    padding-left: $base-side-padding;
+    font-weight: 300;
+    font-size: 48px;
+  }
+
+  &__content {}
+
+  &__image-wrapper {
+    padding-right: $base-side-padding;
+    padding-left: $base-side-padding;
+  }
+
+  &__image {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__description-wrapper {
+    padding-right: $base-side-padding;
+    padding-left: $base-side-padding;
+  }
+
+  &__description {
+    font-size: 30px;
+  }
+}
+
+
+// TODO: Same styles as for backpacks (must be combined and extracted to shared styles)
+.locations {
+  padding-right: $base-side-padding;
+  padding-left: $base-side-padding;
+  background-color: #fff;
+
+  & + & {
+    border-top: 1px solid #c8c8c8;
+  }
+
+  &--inverted {
+    background-color: transparent;
+  }
+
+  &--own {}
+
+  &--public {}
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 72px;
+    font-size: 28px;
+    color: #555;
+  }
+}
+
+.locations-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  &__item {}
+}
+
+.locations-list-item {
+  border-top: 1px solid #c8c8c8;
+
+  &__link {}
+}
+
+.location-link {
+  line-height: 86px;
+  font-size: 34px;
+  text-decoration: none;
+  color: #000;
+
+  .locations--inverted & {
+    color: #fff;
+  }
+
+  .locations--own & {
+    color: $blue;
+  }
+}

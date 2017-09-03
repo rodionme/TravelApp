@@ -8,6 +8,7 @@ import { FindComponent } from './find/find.component';
 import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
 import { BackpacksComponent } from './backpacks/backpacks.component';
+import { BackpackComponent } from './backpack/backpack.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BackpacksComponent } from './backpacks/backpacks.component';
     FindComponent,
     CreditsComponent,
     FaqComponent,
-    BackpacksComponent
+    BackpacksComponent,
+    BackpackComponent
   ],
   imports: [
     BrowserModule,
