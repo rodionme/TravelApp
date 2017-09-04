@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import 'rxjs/add/operator/switchMap';
+
+import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
+import { ParamMap, ActivatedRoute } from '@angular/router';
+
+import { Backpack } from '../backpack';
+import { BackpackService } from '../backpack.service';
 
 @Component({
   selector: 'app-backpack',
@@ -7,9 +13,19 @@ import { Location } from '@angular/common';
   styleUrls: ['./backpack.component.scss']
 })
 export class BackpackComponent implements OnInit {
-  constructor(private location: Location) {}
+  @Input() backpack: Backpack;
 
-  ngOnInit() {}
+  constructor(
+    private location: Location,
+    private route: ActivatedRoute,
+    private backpackService: BackpackService
+  ) {}
+
+  ngOnInit() {
+    this.route.paramMap
+      .switchMap((params: ParamMap) => this.backpackService.getBackpack(+params.get('id')))
+      .subscribe(backpack => this.backpack = backpack);
+  }
 
   goBack(): void {
     this.location.back();

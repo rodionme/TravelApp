@@ -18,17 +18,14 @@
   <main class="backpack-page__content content">
     <article class="backpack backpack--own-backpacks">
       <header class="backpack__header">
-        <h2 class="backpack__title">Yellowstone National Park Long Name</h2>
+        <h2 class="backpack__title">{{backpack.title}}</h2>
       </header>
 
       <main class="backpack__content">
-        <div class="backpack__image-wrapper"><img class="backpack__image" src="//via.placeholder.com/800x400" alt="Canterbury Mannor"></div>
+        <div class="backpack__image-wrapper"><img class="backpack__image" src="{{backpack.image}}" alt="{{backpack.title}}"></div>
 
         <div class="backpack__description-wrapper">
-          <p class="backpack__description">
-            This backpack covers the entirely of America's first National Park. Areas include Norris, Mammoth,
-            Canyon Village, and many more.
-          </p>
+          <p class="backpack__description">{{backpack.description}}</p>
         </div>
 
         <section class="locations locations--inverted">

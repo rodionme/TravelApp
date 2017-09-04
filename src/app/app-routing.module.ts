@@ -30,7 +30,7 @@ const routes: Routes = [
     path: 'backpacks',
     component: BackpacksComponent
   }, {
-    path: 'backpack',
+    path: 'backpack/:id',
     component: BackpackComponent
   }, {
     path: 'location',
