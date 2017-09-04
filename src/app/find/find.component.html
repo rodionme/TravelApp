@@ -29,39 +29,11 @@
 
       <div class="search__results">
         <ul class="list">
-          <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
-              <h4 class="location-link__title">Long title of some location</h4>
-              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howardis located on the campus of Howard</p></a></div>
-          </li>
-
-          <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
-              <h4 class="location-link__title">Canterbury Mannor</h4>
-              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
-          </li>
-
-          <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
-              <h4 class="location-link__title">Canterbury Mannor</h4>
-              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
-          </li>
-
-          <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
-              <h4 class="location-link__title">Canterbury Mannor</h4>
-              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
-          </li>
-
-          <li class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" routerLink="/location"><img class="location-link__thumb" src="//via.placeholder.com/150x150"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" routerLink="/location">
-              <h4 class="location-link__title">Canterbury Mannor</h4>
-              <p class="location-link__description">The General Oliver Otis Howard House is located on the campus of Howard</p></a></div>
+          <li *ngFor="let sight of sights" class="list__item list-item">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link" (click)="goToDetail(sight)"><img class="location-link__thumb" src="{{sight.image}}"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link" (click)="goToDetail(sight)">
+              <h4 class="location-link__title">{{sight.title}}</h4>
+              <p class="location-link__description">{{sight.shortDescription}}</p></a></div>
           </li>
         </ul>
       </div>

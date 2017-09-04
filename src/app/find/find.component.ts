@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+
+import { SightService } from '../sight.service';
+import { Sight } from '../sight';
 
 @Component({
   selector: 'app-find',
@@ -8,6 +12,7 @@ import { Location } from '@angular/common';
 })
 export class FindComponent implements OnInit {
   @Input() searchQuery: string = '';
+  sights: Sight[];
 
   // TODO: Debug
   isInstructionsOn: boolean = false;
@@ -17,9 +22,15 @@ export class FindComponent implements OnInit {
   isSearchOn: boolean = false;
   isSearchResultsOn: boolean = false;
 
-  constructor(private location: Location) {}
+  constructor(
+    private location: Location,
+    private locationService: SightService,
+    private router: Router
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getSights();
+  }
 
   goBack(): void {
     this.location.back();
@@ -56,7 +67,7 @@ export class FindComponent implements OnInit {
 
   checkSearchInput(): void {
     if (this.searchQuery.length > 1) {
-      // TODO: Service.getLocations(this.searchQuery)
+      // TODO: Service.getSights(this.searchQuery)
       this.isSearchResultsOn = true;
     } else {
       this.isSearchResultsOn = false;
@@ -71,5 +82,14 @@ export class FindComponent implements OnInit {
   saveFilters(): void {
     // TODO: Service.setFilters()
     this.closeFilters();
+  }
+
+
+  getSights(): void {
+    this.locationService.getSights().then(sights => this.sights = sights);
+  }
+
+  goToDetail(sight): void {
+    this.router.navigate(['/sight', sight.id]);
   }
 }

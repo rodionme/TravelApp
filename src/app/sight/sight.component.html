@@ -1,0 +1,43 @@
+<section class="page-container location-page" id="page-launch">
+  <header class="topbar">
+    <div class="topbar__left topbar__part">
+      <button class="topbar__button" type="button" title="Back" (click)="goBack()">Back
+        <svg class="icon icon-back"><use xlink:href="#icon-back"></use></svg>
+      </button>
+    </div>
+
+    <div class="topbar__center topbar__part"><span class="topbar__title">Location</span></div>
+
+    <div class="topbar__right topbar__part">
+      <button class="topbar__button" type="button" title="Map" routerLink="/find">Map
+        <svg class="icon icon-map"><use xlink:href="#icon-map"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="location-page__content content">
+    <article class="location location--own-backpacks">
+      <header class="location__header">
+        <h2 class="location__title">{{sight.title}}</h2>
+
+        <div class="location__distance">
+          <div class="location__distance-pin location-distance-pin"></div><span class="location__distance-value">100m</span>
+        </div>
+      </header>
+
+      <main class="location__content">
+        <div class="location__image-wrapper"><img class="location__image" src="{{sight.image}}" alt="Canterbury Mannor"></div>
+
+        <div class="location__description-wrapper">
+          <p class="location__description">{{sight.description}}</p>
+        </div>
+
+        <div class="location__credits location-credits">
+          <h4 class="location-credits__title">Credits and Sources</h4>
+
+          <p class="location-credits__text" [innerHTML]="sight.credits"></p>
+        </div>
+      </main>
+    </article>
+  </main>
+</section>

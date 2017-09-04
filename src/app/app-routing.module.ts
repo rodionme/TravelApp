@@ -7,7 +7,7 @@ import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
 import { BackpacksComponent } from './backpacks/backpacks.component';
 import { BackpackComponent } from './backpack/backpack.component';
-import { LocationComponent } from './location/location.component';
+import { SightComponent } from './sight/sight.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
@@ -33,8 +33,8 @@ const routes: Routes = [
     path: 'backpack/:id',
     component: BackpackComponent
   }, {
-    path: 'location',
-    component: LocationComponent
+    path: 'sight/:id',
+    component: SightComponent
   }, {
     path: 'settings',
     component: SettingsComponent

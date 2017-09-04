@@ -14,9 +14,10 @@ import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
 import { BackpacksComponent } from './backpacks/backpacks.component';
 import { BackpackComponent } from './backpack/backpack.component';
-import { LocationComponent } from './location/location.component';
+import { SightComponent } from './sight/sight.component';
 import { SettingsComponent } from './settings/settings.component';
 import { BackpackService } from './backpack.service';
+import { SightService } from './sight.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { BackpackService } from './backpack.service';
     FaqComponent,
     BackpacksComponent,
     BackpackComponent,
-    LocationComponent,
+    SightComponent,
     SettingsComponent
   ],
   imports: [
@@ -37,7 +38,10 @@ import { BackpackService } from './backpack.service';
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
-  providers: [BackpackService],
+  providers: [
+    BackpackService,
+    SightService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
