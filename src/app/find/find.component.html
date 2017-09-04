@@ -29,9 +29,9 @@
 
       <div class="search__results">
         <ul class="list">
-          <li *ngFor="let sight of sights" class="list__item list-item">
-            <div class="list-item__left list-item__side"><a class="list-item__link location-link" (click)="goToDetail(sight)"><img class="location-link__thumb" src="{{sight.image}}"></a></div>
-            <div class="list-item__right list-item__side"><a class="list-item__link location-link" (click)="goToDetail(sight)">
+          <li *ngFor="let sight of sights" class="list__item list-item" (click)="goToDetail(sight)">
+            <div class="list-item__left list-item__side"><a class="list-item__link location-link"><img class="location-link__thumb" src="{{sight.image}}"></a></div>
+            <div class="list-item__right list-item__side"><a class="list-item__link location-link">
               <h4 class="location-link__title">{{sight.title}}</h4>
               <p class="location-link__description">{{sight.shortDescription}}</p></a></div>
           </li>
