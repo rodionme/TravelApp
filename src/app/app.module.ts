@@ -18,8 +18,17 @@ import { SightComponent } from './sight/sight.component';
 import { SettingsComponent } from './settings/settings.component';
 import { BackpackService } from './backpack.service';
 import { SightService } from './sight.service';
+import { MapService } from './map.service';
+import { GeocoderService } from './geocoder.service';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+  ],
   declarations: [
     AppComponent,
     LaunchComponent,
@@ -31,16 +40,11 @@ import { SightService } from './sight.service';
     SightComponent,
     SettingsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
-  ],
   providers: [
     BackpackService,
-    SightService
+    SightService,
+    MapService,
+    GeocoderService,
   ],
   bootstrap: [AppComponent]
 })

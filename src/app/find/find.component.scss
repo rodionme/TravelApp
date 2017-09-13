@@ -9,18 +9,23 @@
 .map {
   width: 100%;
   flex-grow: 1;
-  background: url("//via.placeholder.com/1000x1000");
-  background-size: contain;
 }
 
 
 
+.overlay-panel--expanded {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
 .search {
   &.overlay-panel--expanded {
-    display: flex;
-    flex-direction: column;
     height: auto;
-    background-color: white;
   }
 
   &__search-bar {
@@ -130,11 +135,10 @@
 
 
 .search-filters {
-  &.overlay-panel--expanded {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 
   &__title {
     flex-shrink: 0;
@@ -271,8 +275,6 @@
   background-color: rgba(#000, .85);
 
   &.overlay-panel--expanded {
-    display: flex;
-    flex-direction: column;
     align-items: center;
   }
 

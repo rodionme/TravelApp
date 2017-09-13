@@ -2,8 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
+import * as L from 'leaflet';
+
+import { MapService } from '../map.service';
 import { SightService } from '../sight.service';
 import { Sight } from '../sight';
+import { GeocoderService } from '../geocoder.service';
 
 @Component({
   selector: 'app-find',
@@ -24,11 +28,35 @@ export class FindComponent implements OnInit {
 
   constructor(
     private location: Location,
-    private locationService: SightService,
-    private router: Router
+    private sightService: SightService,
+    private router: Router,
+    private mapService: MapService,
+    private geocoder: GeocoderService,
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let map = L.map('map', {
+      zoomControl: false,
+      center: L.latLng(48.463, 35.039),     // Dnipro
+      zoom: 12,
+      minZoom: 4,
+      maxZoom: 19,
+      layers: [this.mapService.baseMaps.OpenStreetMap]
+    });
+
+    L.control.zoom({ position: 'topright' }).addTo(map);
+    L.control.layers(this.mapService.baseMaps).addTo(map);
+    L.control.scale().addTo(map);
+
+    this.mapService.map = map;
+
+    // TODO: InMemoryWebApiModule triggers the malfunctioning of this method
+    //this.geocoder.getCurrentLocation()
+    //  .subscribe(
+    //    location => map.panTo([location.latitude, location.longitude]),
+    //    err => console.error(err)
+    //  );
+  }
 
   goBack(): void {
     this.location.back();
@@ -85,7 +113,7 @@ export class FindComponent implements OnInit {
 
   getSights(term?: string): void {
     // TODO: Use Observable instead
-    this.locationService.getSights(term).then(sights => this.sights = sights);
+    this.sightService.getSights(term).then(sights => this.sights = sights);
   }
 
   goToDetail(sight): void {
