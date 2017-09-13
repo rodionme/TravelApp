@@ -11,9 +11,11 @@ export class BackpackService {
 
   constructor(private http: Http) {}
 
-  getBackpacks(): Promise<Backpack[]> {
+  getBackpacks(term?: string): Promise<Backpack[]> {
+    let backpacksUrl = term ? `${this.backpacksUrl}/?title=${term}` : this.backpacksUrl;
+
     return this.http
-      .get(this.backpacksUrl)
+      .get(backpacksUrl)
       .toPromise()
       .then(response => response.json().data as Backpack[])
       .catch(this.handleError);

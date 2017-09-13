@@ -18,7 +18,7 @@
   <main class="backpacks-page__content content">
     <section class="backpacks-search">
       <div class="backpacks-search__search-bar search-bar">
-        <input class="search-bar__input" type="text" placeholder="Tap to search backpacks">
+        <input #searchBox class="search-bar__input" (input)="getBackpacks(searchBox.value)" type="text" placeholder="Tap to search backpacks">
       </div>
 
       <div class="backpacks-search__results">

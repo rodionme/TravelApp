@@ -19,7 +19,7 @@ export class BackpacksComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getBackpacks();
   }
 
@@ -27,8 +27,9 @@ export class BackpacksComponent implements OnInit {
     this.location.back();
   }
 
-  getBackpacks(): void {
-    this.backpackService.getBackpacks().then(backpacks => this.backpacks = backpacks);
+  getBackpacks(term?: string): void {
+    // TODO: Use Observable instead
+    this.backpackService.getBackpacks(term).then(backpacks => this.backpacks = backpacks);
   }
 
   goToDetail(backpack): void {
