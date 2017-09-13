@@ -1,3 +1,5 @@
+import 'rxjs/add/operator/toPromise';
+
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -9,9 +11,11 @@ export class SightService {
 
   constructor(private http: Http) {}
 
-  getSights(): Promise<Sight[]> {
+  getSights(term?: string): Promise<Sight[]> {
+    let sightsUrl = term ? `${this.sightsUrl}/?title=${term}` : this.sightsUrl;
+
     return this.http
-      .get(this.sightsUrl)
+      .get(sightsUrl)
       .toPromise()
       .then(response => response.json().data as Sight[])
       .catch(this.handleError);

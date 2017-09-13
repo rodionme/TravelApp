@@ -24,7 +24,7 @@
 
     <section class="search overlay-panel" [ngClass]="{'overlay-panel--expanded': isSearchOn, 'search--expanded': isSearchResultsOn}">
       <div class="search__search-bar search-bar">
-        <input class="search-bar__input" type="text" placeholder="Input more than 1 letter to search" [(ngModel)]="searchQuery" (keyup)="checkSearchInput()">
+        <input #searchBox class="search-bar__input" [(ngModel)]="searchQuery" (input)="onSearchInput(searchBox.value)" type="text" placeholder="Input more than 1 letter to search">
       </div>
 
       <div class="search__results">

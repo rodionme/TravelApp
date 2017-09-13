@@ -65,10 +65,10 @@ export class FindComponent implements OnInit {
     this.closeFilters();
   }
 
-  checkSearchInput(): void {
+  onSearchInput(term: string): void {
     if (this.searchQuery.length > 1) {
-      // TODO: Service.getSights(this.searchQuery)
       this.isSearchResultsOn = true;
+      this.getSights(term);
     } else {
       this.isSearchResultsOn = false;
     }
@@ -85,8 +85,9 @@ export class FindComponent implements OnInit {
   }
 
 
-  getSights(): void {
-    this.locationService.getSights().then(sights => this.sights = sights);
+  getSights(term?: string): void {
+    // TODO: Use Observable instead
+    this.locationService.getSights(term).then(sights => this.sights = sights);
   }
 
   goToDetail(sight): void {
