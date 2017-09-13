@@ -6,7 +6,7 @@
       </button>
     </div>
 
-    <div class="topbar__center topbar__part"><span class="topbar__title">Location</span></div>
+    <div class="topbar__center topbar__part"><span class="topbar__title">Sight</span></div>
 
     <div class="topbar__right topbar__part">
       <button class="topbar__button" type="button" title="Map" routerLink="/find">Map
@@ -21,7 +21,7 @@
         <h2 class="location__title">{{sight.title}}</h2>
 
         <div class="location__distance">
-          <div class="location__distance-pin location-distance-pin"></div><span class="location__distance-value">100m</span>
+          <div class="location__distance-pin location-distance-pin"></div><span class="location__distance-value">{{distance}} m</span>
         </div>
       </header>
 
@@ -29,7 +29,7 @@
         <div class="location__image-wrapper"><img class="location__image" src="{{sight.image}}" alt="Canterbury Mannor"></div>
 
         <div class="location__description-wrapper">
-          <p class="location__description">{{sight.description}}</p>
+          <p class="location__description" [innerHTML]="sight.description"></p>
         </div>
 
         <div class="location__credits location-credits">

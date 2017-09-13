@@ -32,12 +32,8 @@
           <h4 class="locations__title">Locations</h4>
 
           <ul class="locations-search__results-list locations-list">
-            <li class="locations-list__item locations-list-item">
-              <a class="locations-list-item__link location-link" routerLink="/location">Yellowstone National Park</a>
-            </li>
-
-            <li class="locations-list__item locations-list-item">
-              <a class="locations-list-item__link location-link" routerLink="/location">Washington DC Monuments</a>
+            <li *ngFor="let sight of backpack.sights" class="locations-list__item locations-list-item">
+              <a class="locations-list-item__link location-link" routerLink="/sight/{{sight.id}}">{{sight.title}}</a>
             </li>
           </ul>
         </section>

@@ -28,6 +28,12 @@ export class SightComponent implements OnInit {
   }
 
   goBack(): void {
+    // TODO: Add the ability to return to Find screen with opened latest search results
     this.location.back();
+  }
+
+  get distance(): number {
+    // TODO: Add real calculations of distance based on current user position and sight geolocation
+    return 100;
   }
 }
