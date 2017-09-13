@@ -28,9 +28,7 @@ export class FindComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {
-    this.getSights();
-  }
+  ngOnInit() {}
 
   goBack(): void {
     this.location.back();
