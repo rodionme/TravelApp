@@ -1,5 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
+import { SightType } from './sight-type.enum';
+
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const backpacks = [
@@ -145,6 +147,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 1,
         title: 'General Oliver Otis Howard House',
+        type: SightType.archaeological,
         image: '//via.placeholder.com/800x400',
         description: `The General Oliver Otis Howard House is located on the campus of Howard University. Contructed between
             1867 and 1869, it was the home of Major General Oliver Otis Howard, the founder of the school and its
@@ -168,6 +171,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 2,
         title: 'Canterbury Mannor',
+        type: SightType.attractions,
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
@@ -177,6 +181,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 3,
         title: 'Another Sight',
+        type: SightType.buildings,
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
@@ -186,6 +191,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 4,
         title: 'Sight With Very-very-very Long Name Which Is Not Fit Into One Line',
+        type: SightType.cemeteries,
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
@@ -195,12 +201,67 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 5,
         title: 'Sight #5',
+        type: SightType.communities,
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
         coordinates: [],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
-      }
+      },
+      {
+        id: 6,
+        title: 'Sight #6',
+        type: SightType.markers,
+        image: '//via.placeholder.com/800x400',
+        description: `The General Oliver Otis Howard House is located on the campus of Howard University. Contructed between
+            1867 and 1869, it was the home of Major General Oliver Otis Howard, the founder of the school and its
+            first President to 1873.`,
+        shortDescription: `The General Oliver Otis Howard House is located on the campus of Howard University. Contructed between
+            1867 and 1869, it was the home of Major General Oliver Otis Howard, the founder of the school and its
+            first President to 1873.`,
+        coordinates: [],
+        credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
+      },
+      {
+        id: 7,
+        title: 'Sight #7',
+        type: SightType.museums,
+        image: '//via.placeholder.com/800x400',
+        description: `Some description should be here`,
+        shortDescription: `Some short description should be here`,
+        coordinates: [],
+        credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
+      },
+      {
+        id: 8,
+        title: 'Sight #8',
+        type: SightType.natural,
+        image: '//via.placeholder.com/800x400',
+        description: `Some description should be here`,
+        shortDescription: `Some short description should be here`,
+        coordinates: [],
+        credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
+      },
+      {
+        id: 9,
+        title: 'Sight #9',
+        type: SightType.parks,
+        image: '//via.placeholder.com/800x400',
+        description: `Some description should be here`,
+        shortDescription: `Some short description should be here`,
+        coordinates: [],
+        credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
+      },
+      {
+        id: 10,
+        title: 'Sight #10',
+        type: SightType.sites,
+        image: '//via.placeholder.com/800x400',
+        description: `Some description should be here`,
+        shortDescription: `Some short description should be here`,
+        coordinates: [],
+        credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
+      },
     ];
 
     return { backpacks, sights };
