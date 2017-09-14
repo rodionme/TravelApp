@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 import * as L from 'leaflet';
+import 'leaflet.markercluster';
 
 import { MapService } from '../map.service';
 import { SightService } from '../sight.service';
@@ -43,12 +44,34 @@ export class FindComponent implements OnInit {
       maxZoom: 19,
       layers: [this.mapService.baseMaps.OpenStreetMap]
     });
+    let markers = L.markerClusterGroup();
 
     L.control.zoom({ position: 'topright' }).addTo(map);
     L.control.layers(this.mapService.baseMaps).addTo(map);
     L.control.scale().addTo(map);
 
     this.mapService.map = map;
+
+    this.sightService.getSights().then(sights => {
+      sights.forEach(sight => {
+        let iconUrl = `../assets/img/icons/markers/marker-icon-${sight.type}.png`;
+
+        // TODO: Implement link to sight into marker popup or on marker click
+        markers.addLayer(L.marker(sight.coordinates, {
+          icon: L.icon({
+            iconSize: [25, 41],
+            iconAnchor: [13, 18],
+            iconUrl: iconUrl,
+            shadowUrl: '../assets/img/icons/markers/marker-shadow.png'
+          })
+        })
+          .addTo(map)
+          .bindPopup(sight.title)
+          .openPopup());
+      });
+
+      map.addLayer(markers);
+    });
 
     // TODO: InMemoryWebApiModule triggers the malfunctioning of this method
     //this.geocoder.getCurrentLocation()
