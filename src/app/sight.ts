@@ -1,3 +1,5 @@
+import { LatLng } from 'leaflet';
+
 export class Sight {
   id: number;
   title: string;
@@ -5,6 +7,6 @@ export class Sight {
   image: string;
   description: string;
   shortDescription: string;
-  coordinates: number[];
+  coordinates: LatLng;
   credits: string;
 }

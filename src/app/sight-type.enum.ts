@@ -4,9 +4,9 @@ export enum SightType {
   buildings = 'buildings',
   cemeteries = 'cemeteries',
   communities = 'communities',
-  sites = 'sites',
   markers = 'markers',
   museums = 'museums',
   parks = 'parks',
   natural = 'natural',
+  sites = 'sites',
 }

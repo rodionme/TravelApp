@@ -165,7 +165,7 @@ export class InMemoryDataService implements InMemoryDbService {
         shortDescription: `The General Oliver Otis Howard House is located on the campus of Howard University. Contructed between
             1867 and 1869, it was the home of Major General Oliver Otis Howard, the founder of the school and its
             first President to 1873.`,
-        coordinates: [],
+        coordinates: [48.4515, 34.9863],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -175,7 +175,7 @@ export class InMemoryDataService implements InMemoryDbService {
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
-        coordinates: [],
+        coordinates: [48.4396, 35.0038],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -185,7 +185,7 @@ export class InMemoryDataService implements InMemoryDbService {
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
-        coordinates: [],
+        coordinates: [48.4305, 35.0271],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -195,7 +195,7 @@ export class InMemoryDataService implements InMemoryDbService {
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
-        coordinates: [],
+        coordinates: [48.4569, 35.0175],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -205,7 +205,7 @@ export class InMemoryDataService implements InMemoryDbService {
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
-        coordinates: [],
+        coordinates: [48.4558, 35.0299],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -219,7 +219,7 @@ export class InMemoryDataService implements InMemoryDbService {
         shortDescription: `The General Oliver Otis Howard House is located on the campus of Howard University. Contructed between
             1867 and 1869, it was the home of Major General Oliver Otis Howard, the founder of the school and its
             first President to 1873.`,
-        coordinates: [],
+        coordinates: [48.4572, 35.0683],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -229,7 +229,7 @@ export class InMemoryDataService implements InMemoryDbService {
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
-        coordinates: [],
+        coordinates: [48.5011, 35.0062],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -239,7 +239,7 @@ export class InMemoryDataService implements InMemoryDbService {
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
-        coordinates: [],
+        coordinates: [48.4986, 35.0656],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -249,7 +249,7 @@ export class InMemoryDataService implements InMemoryDbService {
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
-        coordinates: [],
+        coordinates: [48.4884, 35.0923],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
       {
@@ -259,7 +259,7 @@ export class InMemoryDataService implements InMemoryDbService {
         image: '//via.placeholder.com/800x400',
         description: `Some description should be here`,
         shortDescription: `Some short description should be here`,
-        coordinates: [],
+        coordinates: [48.4408, 35.1174],
         credits: `Some regular, <strong>bold</strong> and <em>italic</em> credit text. <a href="//google.com">Some credit link</a>`,
       },
     ];
