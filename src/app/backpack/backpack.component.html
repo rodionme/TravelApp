@@ -16,7 +16,7 @@
   </header>
 
   <main class="backpack-page__content content">
-    <article class="backpack backpack--own-backpacks">
+    <article *ngIf="backpack" class="backpack backpack--own-backpacks">
       <header class="backpack__header">
         <h2 class="backpack__title">{{backpack.title}}</h2>
       </header>
