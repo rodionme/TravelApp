@@ -28,8 +28,7 @@ export class BackpacksComponent implements OnInit {
   }
 
   getBackpacks(term?: string): void {
-    // TODO: Use Observable instead
-    this.backpackService.getBackpacks(term).then(backpacks => this.backpacks = backpacks);
+    this.backpackService.getBackpacks(term).subscribe(backpacks => this.backpacks = backpacks);
   }
 
   goToDetail(backpack): void {

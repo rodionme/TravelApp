@@ -1,7 +1,8 @@
-import 'rxjs/add/operator/toPromise';
-
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
 
 import { Sight } from '../sight';
 
@@ -11,23 +12,21 @@ export class SightService {
 
   constructor(private http: Http) {}
 
-  getSights(term?: string): Promise<Sight[]> {
+  getSights(term?: string): Observable<Sight[]> {
     let sightsUrl = term ? `${this.sightsUrl}/?title=${term}` : this.sightsUrl;
 
     return this.http
       .get(sightsUrl)
-      .toPromise()
-      .then(response => response.json().data as Sight[])
+      .map(response => response.json().data as Sight[])
       .catch(this.handleError);
   }
 
-  getSight(id: number): Promise<Sight> {
+  getSight(id: number): Observable<Sight> {
     const url = `${this.sightsUrl}/${id}`;
 
     return this.http
       .get(url)
-      .toPromise()
-      .then(response => response.json().data as Sight)
+      .map(response => response.json().data as Sight)
       .catch(this.handleError);
   }
 

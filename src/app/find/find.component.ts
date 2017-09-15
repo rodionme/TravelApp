@@ -52,7 +52,7 @@ export class FindComponent implements OnInit {
 
     this.mapService.map = map;
 
-    this.sightService.getSights().then(sights => {
+    this.sightService.getSights().subscribe(sights => {
       sights.forEach(sight => {
         let iconUrl = `../assets/img/icons/markers/marker-icon-${sight.type}.png`;
 
@@ -135,8 +135,7 @@ export class FindComponent implements OnInit {
 
 
   getSights(term?: string): void {
-    // TODO: Use Observable instead
-    this.sightService.getSights(term).then(sights => this.sights = sights);
+    this.sightService.getSights(term).subscribe(sights => this.sights = sights);
   }
 
   goToDetail(sight): void {

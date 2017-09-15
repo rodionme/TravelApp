@@ -1,7 +1,8 @@
-import 'rxjs/add/operator/toPromise';
-
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
 
 import { Backpack } from '../backpack';
 
@@ -11,23 +12,21 @@ export class BackpackService {
 
   constructor(private http: Http) {}
 
-  getBackpacks(term?: string): Promise<Backpack[]> {
+  getBackpacks(term?: string): Observable<Backpack[]> {
     let backpacksUrl = term ? `${this.backpacksUrl}/?title=${term}` : this.backpacksUrl;
 
     return this.http
       .get(backpacksUrl)
-      .toPromise()
-      .then(response => response.json().data as Backpack[])
+      .map(response => response.json().data as Backpack[])
       .catch(this.handleError);
   }
 
-  getBackpack(id: number): Promise<Backpack> {
+  getBackpack(id: number): Observable<Backpack> {
     const url = `${this.backpacksUrl}/${id}`;
 
     return this.http
       .get(url)
-      .toPromise()
-      .then(response => response.json().data as Backpack)
+      .map(response => response.json().data as Backpack)
       .catch(this.handleError);
   }
 
