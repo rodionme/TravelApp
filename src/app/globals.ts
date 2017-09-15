@@ -1,3 +1,3 @@
-export const Globals = Object.freeze({
+export const Globals = {
   APP_TITLE: 'TravelApp'
-});
+};
