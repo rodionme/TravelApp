@@ -1,6 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { SightType } from './sight-type.enum';
+import { SightType } from '../sight-type.enum';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {

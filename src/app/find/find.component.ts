@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 import * as L from 'leaflet';
 import 'leaflet.markercluster';
 
-import { MapService } from '../map.service';
-import { SightService } from '../sight.service';
+import { MapService } from '../services/map.service';
+import { SightService } from '../services/sight.service';
 import { Sight } from '../sight';
-import { GeocoderService } from '../geocoder.service';
+import { GeocoderService } from '../services/geocoder.service';
 
 @Component({
   selector: 'app-find',

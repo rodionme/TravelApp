@@ -5,7 +5,7 @@ import { Http, Response } from '@angular/http';
 
 import * as L from 'leaflet';
 
-import { Location } from './location';
+import { Location } from '../location';
 
 @Injectable()
 export class GeocoderService {

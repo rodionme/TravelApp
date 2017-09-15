@@ -3,7 +3,7 @@ import 'rxjs/add/operator/toPromise';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { Sight } from './sight';
+import { Sight } from '../sight';
 
 @Injectable()
 export class SightService {

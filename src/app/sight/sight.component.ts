@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { Sight } from '../sight';
-import { SightService } from '../sight.service';
+import { SightService } from '../services/sight.service';
 
 @Component({
   selector: 'app-location',

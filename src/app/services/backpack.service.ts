@@ -3,7 +3,7 @@ import 'rxjs/add/operator/toPromise';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { Backpack } from './backpack';
+import { Backpack } from '../backpack';
 
 @Injectable()
 export class BackpackService {
