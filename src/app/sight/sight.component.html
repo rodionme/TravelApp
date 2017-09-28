@@ -16,12 +16,13 @@
   </header>
 
   <main class="location-page__content content">
-    <article *ngIf="sight" class="location location--own-backpacks">
+    <article *ngIf="sight" class="location location--{{sight.type}}">
       <header class="location__header">
         <h2 class="location__title">{{sight.title}}</h2>
 
         <div class="location__distance">
-          <div class="location__distance-pin location-distance-pin"></div><span class="location__distance-value">{{distance}} m</span>
+          <div class="location__distance-pin location-distance-pin"></div>
+          <span class="location__distance-value">{{distance}} m</span>
         </div>
       </header>
 

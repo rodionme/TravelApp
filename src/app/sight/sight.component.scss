@@ -57,12 +57,23 @@
 }
 
 
-
 .location-distance-pin {
-  width: 12px;
-  height: 20px;
-  margin-right: 10px;
-  // TODO: Pin with CSS3
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: -20px 10px 0 -20px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    margin: 8px 0 0 8px;
+    border-radius: 50%;
+    background: #000;
+  }
 
   .location--own-backpacks &  { background-color: $own-backpacks; }
   .location--archaeological & { background-color: $archaeological; }
