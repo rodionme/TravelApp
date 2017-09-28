@@ -1,0 +1,16 @@
+<section class="search" [class.search--expanded]="isSearchResultsOn">
+  <div class="search__search-bar search-bar">
+    <input class="search-bar__input" [(ngModel)]="searchQuery" (input)="onSearchInput()" type="text" placeholder="Input more than 1 letter to search">
+  </div>
+
+  <div class="search__results">
+    <ul class="unstyled-list">
+      <li *ngFor="let sight of sights" class="list__item list-item" (click)="goToDetail(sight)">
+        <div class="list-item__left list-item__side"><a class="list-item__link location-link"><img class="location-link__thumb" src="{{sight.image}}"></a></div>
+        <div class="list-item__right list-item__side"><a class="list-item__link location-link">
+          <h4 class="location-link__title">{{sight.title}}</h4>
+          <p class="location-link__description">{{sight.shortDescription}}</p></a></div>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+@import "../../../styles/shared";
+
+.search-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  padding: 40px $base-side-padding;
+  background-color: rgba(#000, .85);
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__actions {}
+
+  &__accept-button {
+    padding: 10px 30px;
+    border: none;
+    font-size: 30px;
+    background-color: $green;
+    cursor: pointer;
+  }
+}
+
+.instructions-section {
+  margin-bottom: 30px;
+
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-size: 36px;
+    text-align: center;
+    color: $green;
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+  }
+
+  &__icon {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.icon-finger-nav {
+  width: 261px;
+  height: 252px;
+  background: url("../../../assets/img/icons/icon-finger-nav.png");
+}
+
+.icon-target {
+  width: 47px;
+  height: 47px;
+}
