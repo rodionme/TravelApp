@@ -1,5 +1,5 @@
 import { LatLng } from 'leaflet';
-import { SightType } from './sight-type.enum';
+import { SightType } from '../sight-type.enum';
 
 export class Sight {
   id: number;

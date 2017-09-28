@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
 
-import { Sight } from '../sight';
+import { Sight } from '../models/sight';
 
 @Injectable()
 export class SightService {

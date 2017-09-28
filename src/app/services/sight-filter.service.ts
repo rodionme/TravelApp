@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { SightFilter } from '../sight-filter';
+import { SightFilter } from '../models/sight-filter';
 import { SightType } from '../sight-type.enum';
 
 

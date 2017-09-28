@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { Sight } from '../sight';
+import { Sight } from '../models/sight';
 import { SightService } from '../services/sight.service';
 
 @Component({

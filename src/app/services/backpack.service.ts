@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
 
-import { Backpack } from '../backpack';
+import { Backpack } from '../models/backpack';
 
 @Injectable()
 export class BackpackService {

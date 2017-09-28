@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { ParamMap, ActivatedRoute } from '@angular/router';
 
-import { Backpack } from '../backpack';
+import { Backpack } from '../models/backpack';
 import { BackpackService } from '../services/backpack.service';
 
 @Component({

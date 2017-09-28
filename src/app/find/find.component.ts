@@ -9,8 +9,8 @@ import 'leaflet.markercluster';
 import { MapService } from '../services/map.service';
 import { SightService } from '../services/sight.service';
 import { SightType } from '../sight-type.enum';
-import { Sight } from '../sight';
-import { SightFilter } from '../sight-filter';
+import { Sight } from '../models/sight';
+import { SightFilter } from '../models/sight-filter';
 import { GeocoderService } from '../services/geocoder.service';
 import { SightFilterService } from '../services/sight-filter.service';
 
