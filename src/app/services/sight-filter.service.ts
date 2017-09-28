@@ -4,7 +4,7 @@ import { SightFilter } from '../models/sight-filter';
 import { SightType } from '../sight-type.enum';
 
 
-const FILTER_STORAGE = 'TA-filter-storage';
+const FILTER_STORAGE = 'TA-filters';
 const INITIAL_FILTERS = [
   //{ id: 'own-backpacks', title: 'My Backpacks', isActive: true },
   { id: SightType.archaeological, title: 'Archaeological Sites', isActive: true },
