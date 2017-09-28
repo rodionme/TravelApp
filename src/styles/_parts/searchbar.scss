@@ -12,6 +12,20 @@
     color: white;
     background-color: transparent;
     outline: none;
-    // TODO: Add placeholder color
+
+    // Chrome/Opera/Safari
+    &::-webkit-input-placeholder {
+      color: white;
+    }
+
+    // Firefox 19+
+    &::-moz-placeholder {
+      color: white;
+    }
+
+    // IE 10+
+    &:-ms-input-placeholder {
+      color: white;
+    }
   }
 }
