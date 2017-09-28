@@ -1,4 +1,4 @@
-export enum SightType {
+export const enum SightType {
   archaeological = 'archaeological',
   attractions = 'attractions',
   buildings = 'buildings',

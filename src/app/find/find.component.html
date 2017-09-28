@@ -41,102 +41,25 @@
 
     <section class="search-filters overlay-panel" [class.overlay-panel--expanded]="isFiltersOn">
       <h4 class="search-filters__title">Please select layers and backpacks to include</h4>
-      <div class="search-filters__list filters">
-        <ul class="list">
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-1">
-              <input class="toggle-item__checkbox" id="checkbox-1" type="checkbox" name="own-backpacks">
-              <h3 class="toggle-item__title">My Backpacks</h3>
-              <div class="toggle-item__handler toggle-item__handler--own-backpacks"></div>
-            </label>
-          </li>
 
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-2">
-              <input class="toggle-item__checkbox" id="checkbox-2" type="checkbox" name="archaeological">
-              <h3 class="toggle-item__title">Archaeological Sites</h3>
-              <div class="toggle-item__handler toggle-item__handler--archaeological"></div>
-            </label>
-          </li>
+      <form #filterForm="ngForm" class="search-filters__form" (submit)="saveFilters(filterForm)">
+        <div class="search-filters__list filters">
+          <ul class="list">
+            <li *ngFor="let filter of filters; let i = index" class="list__item">
+              <label class="toggle-item" for="checkbox-{{i}}">
+                <input [name]="filter.id" [checked]="filter.isActive" [(ngModel)]="filter.isActive" class="toggle-item__checkbox" id="checkbox-{{i}}" type="checkbox">
+                <h3 class="toggle-item__title">{{filter.title}}</h3>
+                <div class="toggle-item__handler toggle-item__handler--{{filter.id}}"></div>
+              </label>
+            </li>
+          </ul>
+        </div>
 
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-3">
-              <input class="toggle-item__checkbox" id="checkbox-3" type="checkbox" name="attractions">
-              <h3 class="toggle-item__title">Cultural Attractions</h3>
-              <div class="toggle-item__handler toggle-item__handler--attractions"></div>
-            </label>
-          </li>
-
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-4">
-              <input class="toggle-item__checkbox" id="checkbox-4" type="checkbox" name="buildings">
-              <h3 class="toggle-item__title">Historic Buildings</h3>
-              <div class="toggle-item__handler toggle-item__handler--buildings"></div>
-            </label>
-          </li>
-
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-5">
-              <input class="toggle-item__checkbox" id="checkbox-5" type="checkbox" name="cemeteries">
-              <h3 class="toggle-item__title">Historic Cemeteries</h3>
-              <div class="toggle-item__handler toggle-item__handler--cemeteries"></div>
-            </label>
-          </li>
-
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-6">
-              <input class="toggle-item__checkbox" id="checkbox-6" type="checkbox" name="communities">
-              <h3 class="toggle-item__title">Historic Communities</h3>
-              <div class="toggle-item__handler toggle-item__handler--communities"></div>
-            </label>
-          </li>
-
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-7">
-              <input class="toggle-item__checkbox" id="checkbox-7" type="checkbox" name="sites">
-              <h3 class="toggle-item__title">Historic Sites</h3>
-              <div class="toggle-item__handler toggle-item__handler--sites"></div>
-            </label>
-          </li>
-
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-8">
-              <input class="toggle-item__checkbox" id="checkbox-8" type="checkbox" name="markers">
-              <h3 class="toggle-item__title">Historic Markers</h3>
-              <div class="toggle-item__handler toggle-item__handler--markers"></div>
-            </label>
-          </li>
-
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-9">
-              <input class="toggle-item__checkbox" id="checkbox-9" type="checkbox" name="museums">
-              <h3 class="toggle-item__title">Museums</h3>
-              <div class="toggle-item__handler toggle-item__handler--museums"></div>
-            </label>
-          </li>
-
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-10">
-              <input class="toggle-item__checkbox" id="checkbox-10" type="checkbox" name="parks">
-              <h3 class="toggle-item__title">National Parks</h3>
-              <div class="toggle-item__handler toggle-item__handler--parks"></div>
-            </label>
-          </li>
-
-          <li class="list__item">
-            <label class="toggle-item" for="checkbox-11">
-              <input class="toggle-item__checkbox" id="checkbox-11" type="checkbox" name="natural">
-              <h3 class="toggle-item__title">Natural History Sites</h3>
-              <div class="toggle-item__handler toggle-item__handler--natural"></div>
-            </label>
-          </li>
-        </ul>
-      </div>
-
-      <div class="search-filters__actions">
-        <button class="search-filters__action search-filters__action--negative" type="button" (click)="cancelFilters()">Cancel</button>
-        <button class="search-filters__action search-filters__action--positive" type="button" (click)="saveFilters()">Save</button>
-      </div>
+        <div class="search-filters__actions">
+          <button class="search-filters__action search-filters__action--negative" type="button" (click)="cancelFilters()">Cancel</button>
+          <button class="search-filters__action search-filters__action--positive" type="submit">Save</button>
+        </div>
+      </form>
     </section>
 
     <section class="search-instructions overlay-panel" [class.overlay-panel--expanded]="isInstructionsOn">

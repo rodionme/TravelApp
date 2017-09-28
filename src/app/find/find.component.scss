@@ -153,6 +153,11 @@
     color: #4f4f4f;
   }
 
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__list {
     padding-right: $base-side-padding;
     padding-left: $base-side-padding;

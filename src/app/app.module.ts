@@ -20,6 +20,7 @@ import { BackpackService } from './services/backpack.service';
 import { SightService } from './services/sight.service';
 import { MapService } from './services/map.service';
 import { GeocoderService } from './services/geocoder.service';
+import { SightFilterService } from './services/sight-filter.service';
 
 @NgModule({
   imports: [
@@ -38,13 +39,14 @@ import { GeocoderService } from './services/geocoder.service';
     BackpacksComponent,
     BackpackComponent,
     SightComponent,
-    SettingsComponent
+    SettingsComponent,
   ],
   providers: [
     BackpackService,
     SightService,
     MapService,
     GeocoderService,
+    SightFilterService,
   ],
   bootstrap: [AppComponent]
 })

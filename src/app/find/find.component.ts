@@ -1,14 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 import * as L from 'leaflet';
 import 'leaflet.markercluster';
 
 import { MapService } from '../services/map.service';
 import { SightService } from '../services/sight.service';
+import { SightType } from '../sight-type.enum';
 import { Sight } from '../sight';
+import { SightFilter } from '../sight-filter';
 import { GeocoderService } from '../services/geocoder.service';
+import { SightFilterService } from '../services/sight-filter.service';
 
 @Component({
   selector: 'app-find',
@@ -18,6 +22,9 @@ import { GeocoderService } from '../services/geocoder.service';
 export class FindComponent implements OnInit {
   @Input() searchQuery: string = '';
   sights: Sight[];
+
+  filters: SightFilter[];
+  activeFilters: SightType[];
 
   // TODO: Debug
   isInstructionsOn: boolean = false;
@@ -33,9 +40,13 @@ export class FindComponent implements OnInit {
     private router: Router,
     private mapService: MapService,
     private geocoder: GeocoderService,
+    private sightFilterService: SightFilterService,
   ) {}
 
   ngOnInit() {
+    this.filters = this.sightFilterService.getFilters();
+    this.activeFilters = this.sightFilterService.getActiveFilters();
+
     let map = L.map('map', {
       zoomControl: false,
       center: L.latLng(48.463, 35.039),     // Dnipro
@@ -53,7 +64,14 @@ export class FindComponent implements OnInit {
     this.mapService.map = map;
 
     this.sightService.getSights().subscribe(sights => {
-      sights.forEach(sight => {
+      // TODO: Move filtering to backend
+      let filteredSights = sights.filter(sight => this.activeFilters.includes(sight.type));
+
+      // TODO: Debug
+      console.log(this.activeFilters);
+      console.log(filteredSights);
+
+      filteredSights.forEach(sight => {
         let iconUrl = `../assets/img/icons/markers/marker-icon-${sight.type}.png`;
 
         // TODO: Implement link to sight into marker popup or on marker click
@@ -99,7 +117,7 @@ export class FindComponent implements OnInit {
     this.closeSearch();
 
     if (this.isFiltersOn) {
-      // TODO: Service.getFilters()
+      this.filters = this.sightFilterService.getFilters();
     }
   }
 
@@ -128,8 +146,12 @@ export class FindComponent implements OnInit {
     this.closeFilters();
   }
 
-  saveFilters(): void {
-    // TODO: Service.setFilters()
+  saveFilters(form: NgForm): void {
+    this.filters.map(filter => {
+      filter.isActive = form.value[filter['id']];
+    });
+
+    this.sightFilterService.setFilters(this.filters);
     this.closeFilters();
   }
 
