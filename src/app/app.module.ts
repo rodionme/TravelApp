@@ -16,6 +16,7 @@ import { BackpacksComponent } from './backpacks/backpacks.component';
 import { BackpackComponent } from './backpack/backpack.component';
 import { SightComponent } from './sight/sight.component';
 import { SettingsComponent } from './settings/settings.component';
+import { EventService } from './services/event.service';
 import { BackpackService } from './services/backpack.service';
 
 @NgModule({
@@ -38,6 +39,7 @@ import { BackpackService } from './services/backpack.service';
     SettingsComponent,
   ],
   providers: [
+    EventService,
     BackpackService,
   ],
   bootstrap: [AppComponent]

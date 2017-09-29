@@ -6,9 +6,9 @@ import 'leaflet.markercluster';
 import { MapService } from '../../services/map.service';
 import { SightService } from '../../services/sight.service';
 import { SightType } from '../../sight-type.enum';
-import { Sight } from '../../models/sight';
 import { GeocoderService } from '../../services/geocoder.service';
 import { SightFilterService } from '../../services/sight-filter.service';
+import { EVENT_NAME, EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-map',
@@ -18,7 +18,10 @@ import { SightFilterService } from '../../services/sight-filter.service';
 export class MapComponent implements OnInit, AfterViewInit {
   @HostBinding('class') cssClasses = 'map-wrapper';
 
-  sights: Sight[];
+  clusterLayer: L.MarkerClusterGroup;
+  markers: {[name: string]: L.Marker[]} = {};
+
+  oldFilters: SightType[] = [];
   activeFilters: SightType[];
 
   constructor(
@@ -26,20 +29,24 @@ export class MapComponent implements OnInit, AfterViewInit {
     private mapService: MapService,
     private geocoder: GeocoderService,
     private sightFilterService: SightFilterService,
+    private eventService: EventService,
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.activeFilters = this.sightFilterService.getActiveFilters();
 
-    // TODO: InMemoryWebApiModule triggers the malfunctioning of this method
-    //this.geocoder.getCurrentLocation()
-    //  .subscribe(
-    //    location => map.panTo([location.latitude, location.longitude]),
-    //    err => console.error(err)
-    //  );
+    this.eventService.events$.forEach(event => {
+      if (event.name === EVENT_NAME.filtersSaved) {
+        this.updateMarkers();
+      }
+    });
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
+    this.initMap();
+  }
+
+  initMap(): void {
     let map = L.map('map', {
       zoomControl: false,
       center: L.latLng(48.463, 35.039),     // Dnipro
@@ -48,27 +55,35 @@ export class MapComponent implements OnInit, AfterViewInit {
       maxZoom: 19,
       layers: [this.mapService.baseMaps.OpenStreetMap]
     });
-    let markers = L.markerClusterGroup();
 
-    L.control.zoom({ position: 'topright' }).addTo(map);
+    L.control.zoom({ position: 'topleft' }).addTo(map);
     L.control.layers(this.mapService.baseMaps).addTo(map);
     L.control.scale().addTo(map);
 
+    this.clusterLayer = L.markerClusterGroup().addTo(map);
     this.mapService.map = map;
 
+    // TODO: InMemoryWebApiModule triggers the malfunctioning of this method
+    //this.geocoder.getCurrentLocation()
+    //  .subscribe(
+    //    location => map.panTo([location.latitude, location.longitude]),
+    //    err => console.error(err)
+    //  );
+
+    this.initMarkerGroups();
+  }
+
+  initMarkerGroups(): void {
     this.sightService.getSights().subscribe(sights => {
-      // TODO: Move filtering to backend
-      let filteredSights = sights.filter(sight => this.activeFilters.includes(sight.type));
-
-      // TODO: Debug
-      console.log(this.activeFilters);
-      console.log(filteredSights);
-
-      filteredSights.forEach(sight => {
+      sights.forEach(sight => {
         let iconUrl = `../assets/img/icons/markers/marker-icon-${sight.type}.png`;
 
+        if (!(sight.type in this.markers)) {
+          this.markers[sight.type] = [];
+        }
+
         // TODO: Implement link to sight into marker popup or on marker click
-        markers.addLayer(L.marker(sight.coordinates, {
+        this.markers[sight.type].push(L.marker(sight.coordinates, {
           icon: L.icon({
             iconSize: [25, 41],
             iconAnchor: [13, 18],
@@ -76,12 +91,43 @@ export class MapComponent implements OnInit, AfterViewInit {
             shadowUrl: '../assets/img/icons/markers/marker-shadow.png'
           })
         })
-          .addTo(map)
-          .bindPopup(sight.title)
-          .openPopup());
+          .bindPopup(sight.title));
       });
 
-      map.addLayer(markers);
+      this.updateMarkers();
+    });
+  }
+
+  updateMarkers(): void {
+    this.activeFilters = this.sightFilterService.getActiveFilters();
+
+    let markersToAdd = this.activeFilters.filter(activeFilter => {
+      return !this.oldFilters.some(function(oldFilter) {
+        return oldFilter === activeFilter;
+      });
+    });
+
+    let markersToRemove = this.oldFilters.filter(oldFilter => {
+      return !this.activeFilters.some(function(activeFilter) {
+        return oldFilter === activeFilter;
+      });
+    });
+
+    this.addMarkers(markersToAdd);
+    this.removeMarkers(markersToRemove);
+
+    this.oldFilters = this.activeFilters;
+  }
+
+  addMarkers(sightTypes: SightType[]): void {
+    sightTypes.forEach(sightType => {
+      this.clusterLayer.addLayers(this.markers[sightType]);
+    });
+  }
+
+  removeMarkers(sightTypes: SightType[]): void {
+    sightTypes.forEach(sightType => {
+      this.clusterLayer.removeLayers(this.markers[sightType]);
     });
   }
 }

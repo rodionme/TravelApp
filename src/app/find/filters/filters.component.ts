@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { SightFilter } from '../../models/sight-filter';
 import { SightFilterService } from '../../services/sight-filter.service';
+import { EVENT_NAME, EventService } from '../../services/event.service';
 
 @Component({
   selector: 'filters',
@@ -17,6 +18,7 @@ export class FiltersComponent implements OnInit {
 
   constructor(
     private sightFilterService: SightFilterService,
+    private eventService: EventService,
   ) {}
 
   ngOnInit() {
@@ -29,10 +31,12 @@ export class FiltersComponent implements OnInit {
     });
 
     this.sightFilterService.setFilters(this.filters);
+    this.eventService.event({ name: EVENT_NAME.filtersSaved });
     this.closeFilters();
   }
 
   closeFilters(): void {
+    this.eventService.event({ name: EVENT_NAME.filtersClosed });
     this.onFiltersClose.emit(false);
   }
 }
