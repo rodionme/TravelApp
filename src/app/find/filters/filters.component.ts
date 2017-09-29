@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, OnInit, Output } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { SightFilter } from '../../models/sight-filter';
@@ -12,7 +12,6 @@ import { EVENT_NAME, EventService } from '../../services/event.service';
 })
 export class FiltersComponent implements OnInit {
   @HostBinding('class') cssClasses = 'search-filters-wrapper overlay-panel overlay-panel--expanded';
-  @Output() onFiltersClose: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   filters: SightFilter[];
 
@@ -37,6 +36,5 @@ export class FiltersComponent implements OnInit {
 
   closeFilters(): void {
     this.eventService.event({ name: EVENT_NAME.filtersClosed });
-    this.onFiltersClose.emit(false);
   }
 }

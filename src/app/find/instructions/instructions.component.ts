@@ -1,4 +1,6 @@
-import { Component, EventEmitter, HostBinding, Output } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+
+import { EVENT_NAME, EventService } from '../../services/event.service';
 
 @Component({
   selector: 'instructions',
@@ -7,9 +9,12 @@ import { Component, EventEmitter, HostBinding, Output } from '@angular/core';
 })
 export class InstructionsComponent {
   @HostBinding('class') cssClasses = 'search-instructions-wrapper overlay-panel overlay-panel--expanded';
-  @Output() onInstructionsClose: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  constructor(
+    private eventService: EventService,
+  ) {}
 
   closeInstructions(): void {
-    this.onInstructionsClose.emit();
+    this.eventService.event({ name: EVENT_NAME.instructionsClosed });
   }
 }

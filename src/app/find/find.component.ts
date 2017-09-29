@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
+import { EVENT_NAME, EventService } from '../services/event.service';
+
 
 const INSTRUCTIONS_STORAGE = 'TA-instructions';
 
@@ -16,10 +18,26 @@ export class FindComponent implements OnInit {
 
   constructor(
     private location: Location,
+    private eventService: EventService,
   ) {}
 
   ngOnInit(): void {
+    this.addEventListeners();
     this.initInstructions();
+  }
+
+  addEventListeners() {
+    this.eventService.events$.forEach(event => {
+      switch (event.name) {
+        case EVENT_NAME.instructionsClosed:
+          this.closeInstructions();
+          break;
+
+        case EVENT_NAME.filtersClosed:
+          this.closeFilters();
+          break;
+      }
+    });
   }
 
   initInstructions(): void {

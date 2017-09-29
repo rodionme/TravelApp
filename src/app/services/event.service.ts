@@ -3,7 +3,7 @@ import { Subject } from 'rxjs/Subject';
 
 
 export const enum EVENT_NAME {
-  filtersOpened = 'filtersOpened',
+  instructionsClosed = 'instructionsClosed',
   filtersSaved = 'filterSaved',
   filtersClosed = 'filtersClosed',
 }
